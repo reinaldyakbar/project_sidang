@@ -1,4 +1,5 @@
-Mesin Tulis Ulang Aktif 
-RewriteCond  %{REQUEST_FILENAME}  !-f
-RewriteCond  %{REQUEST_FILENAME}  !-d
-RewriteRule  ^(.*)$  index.php/$1  [L]
+RewriteEngine On
+RewriteBase /ci
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
