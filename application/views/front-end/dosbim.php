@@ -17,95 +17,26 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        <a href="<?php echo base_url() ?>assets/front-end/assets/images/profil1.svg"
-                            data-lightbox="avatar">
-                            <img src="<?php echo base_url() ?>assets/front-end/assets/images/profil1.svg" alt="Avatar"
-                                style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;">
-                        </a>
-                        <span>Defri Kurniawan</span>
-                    </td>
-                    <td>0686.11.2013.536</td>
-                    <td>RPLD</td>
-                </tr>
-                <tr>
-                    <td><img src="<?php echo base_url() ?>assets/front-end/assets/images/profil2.svg" alt="Avatar"
-                            style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;"><span>Yani
-                            Parti Astuti S.Si, M.Kom</span></td>
-                    <td>0686.11.2013.532</td>
-                    <td>SC</td>
-                </tr>
-                <tr>
-                    <td><img src="<?php echo base_url() ?>assets/front-end/assets/images/profil3.svg" alt="Avatar"
-                            style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;"><span>DR
-                            Solichul Huda M.Kom</span></td>
-                    <td>0686.11.1997.130</td>
-                    <td>SKKKD</td>
-                </tr>
-                <tr>
-                    <td><img src="<?php echo base_url() ?>assets/front-end/assets/images/profil4.svg" alt="Avatar"
-                            style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;"><span>Junta
-                            Zeniarja M.Kom</span></td>
-                    <td>0686.11.2012.459</td>
-                    <td>RPLD</td>
-                </tr>
-                <tr>
-                    <td><img src="<?php echo base_url() ?>assets/front-end/assets/images/profil5.svg" alt="Avatar"
-                            style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;"><span>Christy
-                            Atika Sari M.Kom</span></td>
-                    <td>0686.11.2012.407</td>
-                    <td>SC</td>
-                </tr>
-                <tr>
-                    <td><img src="<?php echo base_url() ?>assets/front-end/assets/images/profil5.svg" alt="Avatar"
-                            style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;"><span>Christy
-                            Atika Sari M.Kom</span></td>
-                    <td>0686.11.2012.407</td>
-                    <td>SC</td>
-                </tr>
-                <tr>
-                    <td><img src="<?php echo base_url() ?>assets/front-end/assets/images/profil5.svg" alt="Avatar"
-                            style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;"><span>Christy
-                            Atika Sari M.Kom</span></td>
-                    <td>0686.11.2012.407</td>
-                    <td>SC</td>
-                </tr>
-                <tr>
-                    <td><img src="<?php echo base_url() ?>assets/front-end/assets/images/profil5.svg" alt="Avatar"
-                            style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;"><span>Christy
-                            Atika Sari M.Kom</span></td>
-                    <td>0686.11.2012.407</td>
-                    <td>SC</td>
-                </tr>
-                <tr>
-                    <td><img src="<?php echo base_url() ?>assets/front-end/assets/images/profil5.svg" alt="Avatar"
-                            style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;"><span>Christy
-                            Atika Sari M.Kom</span></td>
-                    <td>0686.11.2012.407</td>
-                    <td>SC</td>
-                </tr>
-                <tr>
-                    <td><img src="<?php echo base_url() ?>assets/front-end/assets/images/profil5.svg" alt="Avatar"
-                            style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;"><span>Christy
-                            Atika Sari M.Kom</span></td>
-                    <td>0686.11.2012.407</td>
-                    <td>SC</td>
-                </tr>
-                <tr>
-                    <td><img src="<?php echo base_url() ?>assets/front-end/assets/images/profil5.svg" alt="Avatar"
-                            style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;"><span>Christy
-                            Atika Sari M.Kom</span></td>
-                    <td>0686.11.2012.407</td>
-                    <td>SC</td>
-                </tr>
-                <tr>
-                    <td><img src="<?php echo base_url() ?>assets/front-end/assets/images/profil5.svg" alt="Avatar"
-                            style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;"><span>Christy
-                            Atika Sari M.Kom</span></td>
-                    <td>0686.11.2012.407</td>
-                    <td>SC</td>
-                </tr>
+                <?php foreach ($dosbim as $dsn): ?>
+                    <tr>
+                        <td>
+                            <a href="<?php echo base_url() ?>assets/front-end/assets/images/profil1.svg"
+                                data-lightbox="avatar">
+                                <img src="<?php echo base_url() ?>assets/front-end/assets/images/profil1.svg" alt="Avatar"
+                                    style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;">
+                            </a>
+                            <span>
+                                <?php echo $dsn->nama; ?>
+                            </span>
+                        </td>
+                        <td>
+                            <?php echo $dsn->npp; ?>
+                        </td>
+                        <td>
+                            <?php echo $dsn->bidang; ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>
@@ -119,10 +50,3 @@
 </script>
 <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-    AOS.init();
-</script>
-<script src="<?php echo base_url() ?>assets/front-end/assets/js/bootstrap.min.js"></script>
-</body>
-
-</html>

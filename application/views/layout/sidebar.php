@@ -48,7 +48,7 @@
                         <div class="collapse" id="collapse2" aria-labelledby="headingOne"
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="">RPLD</a>
+                                <a class="nav-link" href="<?php echo base_url('admin/dosbim') ?>">RPLD</a>
                                 <a class="nav-link" href="">SC</a>
                                 <a class="nav-link" href="">SKKKD</a>
 
