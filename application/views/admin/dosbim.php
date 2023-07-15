@@ -16,8 +16,8 @@
         <div class="container">
             <!-- Tombol Tambah Dosen -->
             <div class="d-flex justify-content-end mb-4">
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahDosenModal">Tambah
-                    Dosen</button>
+                <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#tambahDosenModal"><i
+                        class="fas fa-plus"></i></button>
             </div>
             <table id="example" class="table table-striped" style="width:100%">
                 <thead>
@@ -25,16 +25,15 @@
                         <th>Dosen Pembimbing</th>
                         <th>NPP</th>
                         <th>Bidang kajian</th>
+                        <th class="text-center">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($dosbim as $dsn): ?>
                         <tr>
                             <td>
-                                <a href="<?php echo base_url() ?>assets/front-end/assets/images/profil1.svg"
-                                    data-lightbox="avatar">
-                                    <img src="<?php echo base_url() ?>assets/front-end/assets/images/profil1.svg"
-                                        alt="Avatar"
+                                <a href="<?php echo base_url('uploads/' . $dsn->gambar); ?>" data-lightbox="avatar">
+                                    <img src="<?php echo base_url('uploads/' . $dsn->gambar); ?>" alt=" Avatar"
                                         style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;">
                                 </a>
                                 <span>
@@ -47,7 +46,62 @@
                             <td>
                                 <?php echo $dsn->bidang; ?>
                             </td>
+                            <td class="text-center">
+                                <!-- Tombol Edit -->
+                                <a class="btn btn-success btn-sm" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#editDosenModal<?php echo $dsn->id; ?>"><i
+                                        class="fas fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
+                                <!-- Tombol Hapus -->
+                                <a class="btn btn-danger btn-sm"
+                                    href="<?php echo base_url('admin/delete/' . $dsn->id); ?>"><i
+                                        class="fas fa-trash"></i></a>
+
+                            </td>
                         </tr>
+                        <!-- Modal Edit Dosen -->
+                        <div class="modal fade" id="editDosenModal<?php echo $dsn->id; ?>" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Edit Dosen</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="editDosenForm" action="<?php echo base_url('admin/update'); ?>"
+                                            method="post" enctype="multipart/form-data">
+                                            <div class="mb-3">
+                                                <label for="nama" class="form-label">Nama</label>
+                                                <input type="text" class="form-control" id="nama" name="nama"
+                                                    value="<?php echo $dsn->nama; ?>">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="npp" class="form-label">NPP</label>
+                                                <input type="text" class="form-control" id="npp" name="npp"
+                                                    value="<?php echo $dsn->npp; ?>">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="bidang" class="form-label">Bidang Kajian</label>
+                                                <input type="text" class="form-control" id="bidang" name="bidang"
+                                                    value="<?php echo $dsn->bidang; ?>">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="gambar" class="form-label">Gambar</label>
+                                                <input type="file" class="form-control" id="gambar" name="gambar">
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Batal</button>
+                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Modal Edit Dosen -->
+
                     <?php endforeach; ?>
                 </tbody>
             </table>
@@ -64,8 +118,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <!-- Isi form tambah dosen -->
-                <form id="tambahDosenForm" enctype="multipart/form-data">
+                <form id="tambahDosenForm" action="<?php echo base_url('admin/insert'); ?>" method="post"
+                    enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama</label>
                         <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan nama dosen">
@@ -83,15 +137,16 @@
                         <label for="gambar" class="form-label">Gambar</label>
                         <input type="file" class="form-control" id="gambar" name="gambar">
                     </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                <button type="submit" class="btn btn-primary">Simpan</button>
             </div>
         </div>
     </div>
 </div>
+
 
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
