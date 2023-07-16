@@ -2,24 +2,30 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Press+Start+2P&display=swap"
         rel="stylesheet">
+    <!-- Bootstrap icons-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css
+    ">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="assets/style/responsive.css">
 </head>
 <div id="layoutSidenav_content">
     <section class="bg-white py-2">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="text-center mb-5 mt-4">
-                    <h2 class="display-7 fw-bolder mb-5"><span class="text-gradient d-inline">Daftar Dosen
-                            Pembimbing</span></h2>
-                </div>
-            </div>
-        </div>
         <div class="container">
-            <!-- Tombol Tambah Dosen -->
-            <div class="d-flex justify-content-end mb-4">
-                <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#tambahDosenModal"><i
-                        class="fas fa-plus"></i></button>
-            </div>
             <table id="example" class="table table-striped" style="width:100%">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Tombol Tambah Dosen -->
+                        <div class="d-flex justify-content-end mb-4">
+                            <button class="btn btn-secondary" data-bs-toggle="modal"
+                                data-bs-target="#tambahDosenModal"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
                 <thead>
                     <tr>
                         <th>Dosen Pembimbing</th>
