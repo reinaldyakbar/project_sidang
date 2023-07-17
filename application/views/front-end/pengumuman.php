@@ -28,20 +28,24 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            1
-                                        </td>
-                                        <td>
-                                            <a class="text-decoration-none text-black"
-                                                href="https://tatis1.dinus.web.id/talanding/pengumuman/18">
-                                                Info Pemilihan Dosen Pembimbing TA TI S-1 Ganjil 2022/2023
-                                            </a>
-                                        </td>
-                                        <td>
-                                            12, Sep 2022
-                                        </td>
-                                    </tr>
+                                    <?php if (isset($pengumuman) && is_array($pengumuman)): ?>
+                                        <?php foreach ($pengumuman as $png): ?>
+                                            <tr>
+                                                <td>
+                                                    <?php echo $png->no; ?>
+                                                </td>
+                                                <td>
+                                                    <a class="text-decoration-none text-black"
+                                                        href="<?php echo base_url('pengumuman/isi_pengumuman') ?>">
+                                                        <?php echo $png->judul; ?>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <?php echo $png->tanggal; ?>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
                                 </tbody>
                             </table>
                         </div>

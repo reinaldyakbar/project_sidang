@@ -13,6 +13,10 @@
             <table id="example" class="table table-striped" style="width:100%">
                 <div class="row">
                     <div class="col-lg-12">
+                        <div class="text-center mb-5">
+                            <h2 class="display-7 fw-bolder mb-5 "><span class="d-inline ">Daftar Dosen
+                                    Pembimbing</span></h2>
+                        </div>
                         <!-- Tombol Tambah Dosen -->
                         <div class="d-flex justify-content-end mb-4">
                             <button class="btn btn-secondary" data-bs-toggle="modal"

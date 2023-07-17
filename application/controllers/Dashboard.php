@@ -33,6 +33,14 @@ class Dashboard extends CI_Controller
         $this->load->view('front-end/pengumuman');
         $this->load->view('layout/front-footer');
     }
+    public function isi_pengumuman()
+    {
+
+        $this->load->view('layout/front-header');
+        $this->load->view('layout/front-navbar');
+        $this->load->view('front-end/isi_pengumuman');
+        $this->load->view('layout/front-footer');
+    }
     public function jadwal()
     {
         $this->load->view('layout/front-header');
