@@ -17,7 +17,7 @@
 
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                                    <li class="nav-item mx-1"><a class="nav-link active"
+                                    <li class="nav-item mx-1"><a class="nav-link"
                                             href="<?php echo base_url('dashboard') ?>">Home</a></li>
                                     <li class="nav-item mx-1"><a class="nav-link"
                                             href="<?php echo base_url('dashboard/informasi') ?>">Informasi</a>

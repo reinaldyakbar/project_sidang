@@ -14,7 +14,7 @@
                     <article class="blog_item mb-5 mt-5">
                         <div class="blog_details">
                             <table id="example" class="table-striped table-bordered table-responsive-sm">
-                                <thead class=" text-primary">
+                                <thead class=" text-black">
                                     <tr>
                                         <th class="text-center" width='3%'>
                                             No
@@ -33,39 +33,13 @@
                                             1
                                         </td>
                                         <td>
-                                            <a href="https://tatis1.dinus.web.id/talanding/pengumuman/18">
+                                            <a class="text-decoration-none text-black"
+                                                href="https://tatis1.dinus.web.id/talanding/pengumuman/18">
                                                 Info Pemilihan Dosen Pembimbing TA TI S-1 Ganjil 2022/2023
                                             </a>
                                         </td>
                                         <td>
                                             12, Sep 2022
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            2
-                                        </td>
-                                        <td>
-                                            <a href="https://tatis1.dinus.web.id/talanding/pengumuman/17">
-                                                Pengajuan Dosen Pembimbing TA/Skripsi TI S1 Semester Gasal
-                                                2021/2022
-                                            </a>
-                                        </td>
-                                        <td>
-                                            07, Sep 2021
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            3
-                                        </td>
-                                        <td>
-                                            <a href="https://tatis1.dinus.web.id/talanding/pengumuman/12">
-                                                Pemberitahuan
-                                            </a>
-                                        </td>
-                                        <td>
-                                            13, Mar 2021
                                         </td>
                                     </tr>
                                 </tbody>
