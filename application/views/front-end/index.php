@@ -156,12 +156,10 @@
                     <div class="text-center my-5">
                         <h2 class="display-7 fw-bolder mb-5 "><span class="text-white d-inline ">Informasi Tugas
                                 Akhir</span></h2>
-                        <div class="d-flex justify-content-center fs-5 gap-5 ">
-                            <P class="paragraf1 text-white">Prosedur Tugas Akhir</P>
-                            <p class="paragraf1 text-white">Syarat Sidang Akhir</p>
-                            <p class="paragraf1 text-white">Syarat Akademik</p>
+                        <div class="d-flex justify-content-center fs-5 gap-1 ">
+                            <h3 class="paragraf1 text-white"> Tugas Akhir 1</h3>
+                            <h3 class="paragraf1 text-white"> Tugas Akhir 2</h3>
                         </div>
-                        <a href="# " class="mt-5 text-gradient text-judul text-decoration-none ">Selengkapnya</a>
                     </div>
                 </div>
             </div>
