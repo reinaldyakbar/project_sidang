@@ -14,6 +14,7 @@
                 </li>
                 <li class="nav-item mx-1"><a class="nav-link"
                         href="<?php echo base_url('dashboard/informasi') ?>">Informasi</a>
+                        <ul class=""></ul>
                 </li>
                 <li class="nav-item mx-1"><a class="nav-link"
                         href="<?php echo base_url('dashboard/dosbim') ?>">Dosbim</a>

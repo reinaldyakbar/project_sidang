@@ -40,29 +40,13 @@
         </div>
     </div>
 </footer>
+<a href="#" class="back-to-top bi bi-caret-up-fill"></a>
+<script src="<?php echo base_url() ?>assets/front-end/assets/style/js.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     AOS.init();
 </script>
 <script src="<?php echo base_url() ?>assets/front-end/assets/js/bootstrap.min.js"></script>
-<!-- NAV-LINK ACTIVE -->
-<script>
-    // Ambil semua elemen dengan kelas 'nav-link'
-    var navLinks = document.getElementsByClassName('nav-link');
-
-    // Loop melalui semua elemen dan tambahkan event listener
-    for (var i = 0; i < navLinks.length; i++) {
-        navLinks[i].addEventListener('click', function () {
-            // Hapus kelas 'active' dari semua elemen
-            for (var j = 0; j < navLinks.length; j++) {
-                navLinks[j].classList.remove('active');
-            }
-
-            // Tambahkan kelas 'active' ke elemen yang diklik
-            this.classList.add('active');
-        });
-    }
-</script>
 </body>
 
 </html>
