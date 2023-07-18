@@ -36,7 +36,7 @@
                                                 </td>
                                                 <td>
                                                     <a class="text-decoration-none text-black"
-                                                        href="<?php echo base_url('pengumuman/isi_pengumuman') ?>">
+                                                        href="<?php echo base_url('dashboard/isi_pengumuman') ?>">
                                                         <?php echo $png->judul; ?>
                                                     </a>
                                                 </td>
