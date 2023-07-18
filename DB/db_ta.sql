@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Jul 2023 pada 07.03
+-- Waktu pembuatan: 18 Jul 2023 pada 07.05
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 7.4.33
 
@@ -24,6 +24,34 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `tb_admin`
+--
+
+CREATE TABLE `tb_admin` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(128) NOT NULL,
+  `username` varchar(128) NOT NULL,
+  `password` varchar(128) NOT NULL,
+  `role_id` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_dosbim`
+--
+
+CREATE TABLE `tb_dosbim` (
+  `id` int(11) NOT NULL,
+  `npp` varchar(128) NOT NULL,
+  `nama` varchar(128) NOT NULL,
+  `bidang` varchar(128) NOT NULL,
+  `gambar` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tb_pengumuman`
 --
 
@@ -39,6 +67,18 @@ CREATE TABLE `tb_pengumuman` (
 --
 
 --
+-- Indeks untuk tabel `tb_admin`
+--
+ALTER TABLE `tb_admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `tb_dosbim`
+--
+ALTER TABLE `tb_dosbim`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `tb_pengumuman`
 --
 ALTER TABLE `tb_pengumuman`
@@ -47,6 +87,18 @@ ALTER TABLE `tb_pengumuman`
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_admin`
+--
+ALTER TABLE `tb_admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_dosbim`
+--
+ALTER TABLE `tb_dosbim`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_pengumuman`
