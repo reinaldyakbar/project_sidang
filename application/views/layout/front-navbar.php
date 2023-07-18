@@ -21,13 +21,13 @@
                                             href="<?php echo base_url('dashboard') ?>">Home</a></li>
                                             <li class="nav-item dropdown mx-1">
             <a class="nav-link dropdown-toggle" href="#" id="informasiDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Informasi
+                Informasi TA
             </a>
             <ul class="dropdown-menu" aria-labelledby="informasiDropdown">
                 <!-- Opsi 1 -->
-                <li><a class="dropdown-item" href="<?php echo base_url('dashboard/informasi/ta1') ?>">ta1</a></li>
+                <li><a class="dropdown-item text-black text-center" href="<?php echo base_url('dashboard/informasi/ta1') ?>">Tugas Akhir 1</a></li>
                 <!-- Opsi 2 -->
-                <li><a class="dropdown-item" href="<?php echo base_url('dashboard/informasi/ta2') ?>">ta2</a></li>
+                <li><a class="dropdown-item text-black text-center" href="<?php echo base_url('dashboard/informasi/ta2') ?>">Tugas Akhir 2</a></li>
             </ul>
         </li>
                                     <li class="nav-item mx-1"><a class="nav-link"
