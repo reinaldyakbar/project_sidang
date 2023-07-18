@@ -28,9 +28,10 @@ class Dashboard extends CI_Controller
 
     public function pengumuman()
     {
+        $data['pengumuman'] = $this->model_pengumuman->getPengumuman();
         $this->load->view('layout/front-header');
         $this->load->view('layout/front-navbar');
-        $this->load->view('front-end/pengumuman');
+        $this->load->view('front-end/pengumuman', $data);
         $this->load->view('layout/front-footer');
     }
     public function isi_pengumuman()
