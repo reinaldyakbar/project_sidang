@@ -10,63 +10,78 @@
         </div>
     </div>
     <div class="row d-flex justify-content-center">
-        <div class="col-lg-6 mx-4"
-            style="width: 500px; height: 350px; border-radius: 50px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <div class="col-lg-6 mx-4" style="width: 500px; height: 350px; border-radius: 25px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);">
             <div class="text-center mt-5 mb-5">
-                <h5 class="display-7 fw-bolder mb-3 "><span class=" d-inline ">Prosedur Tugas Akhir</span></h5>
+                <h5 class="display-7 fw-bolder mb-3 "><span class=" d-inline ">Prosedur Tugas Akhir 1</span></h5>
             </div>
             <div class="row">
                 <div class="col-lg-12 px-5">
                     <ol>
+                        <li>Pengarahan TA 1</li>
                         <li>Pemilihan Dosbim</li>
-                        <li>Pemilihan topik penelitian</li>
-                        <li>Penyusunan proposal TA</li>
-                        <li>Penulisan laporan TA</li>
-                        <li>Sidang Akhir</li>
-                        <li>Yudisium</li>
+                        <li>Pembimbingan oleh dosen pembimbing</li>
+                        <li>Membuat TA 1</li>
+                        <li>Mendaftar sidang TA 1</li>
+                        <li>Ujian TA 1</li>
+                        <li>Nilai TA 1 keluar</li>
                     </ol>
                 </div>
             </div>
         </div>
         <div class="col-lg-6 mx-4"
-            style="width: 500px; height: 350px; border-radius: 50px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+            style="width: 500px; height: 350px; border-radius: 25px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);">
             <div class="text-center mt-5 mb-5">
-                <h5 class="display-7 fw-bolder mb-3 "><span class=" d-inline ">Syarat Akademik</span></h5>
+                <h5 class="display-7 fw-bolder mb-3 "><span class=" d-inline ">Syarat Administrasi Tugas Akhir 1</span></h5>
             </div>
             <div class="row">
                 <div class="col-lg-12 px-5">
                     <ol>
-                        <li>Mahasiswa sudah menyelesaikan kuliah minimal 130 SKS
-                        </li>
-                        <li>Dalam daftar KHS tidak boleh ada nilai E</li>
-                        <li>IPK minimal 2.00</li>
-                        <li>Jumlah nilai D maksimal 10% dari jumlah mata kuliah yang telah diambil atau 4 mata
-                            kuliah</li>
+                        <li>Mahasiswa terdaftar sebagai mahasiswa aktif</li>
+                        <li>Mahasiswa tersebut sudah menginput KRS Tugas Akhir 1</li>
+                    </ol>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row d-flex justify-content-center">
-            <div class="col-lg-12 mx-4 mt-4"
-                style="width: 1050px; border-radius: 50px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-                <div class="text-center mt-5 mb-5">
-                    <h5 class="display-7 fw-bolder mb-3 "><span class=" d-inline ">Syarat Sidang Akhir</span>
-                    </h5>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 px-5 mb-4">
+    <div class="d-flex justify-content-center mt-4">
+        <div class="accordion" id="accordionExample" style="width: 1050px;">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button bg-white" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Syarat Akademik Tugas Akhir 1
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
                         <ol>
-                            <li>Menyerahkan dokumen laporan tugas akhir, sebanyak 4 eksemplar ke dosbing dan
-                                penguji setelah diplot</li>
-                            <li>Tidak boleh ada nilai E.</li>
-                            <li>IPK minimal 2.00</li>
-                            <li>Telah menyelesaikan kuliah minimal 140 SKS.</li>
-                            <li>Jumlah nilai D maksimal 5% dari jumlah mata kuliah yang telah diambil atau 2
-                                mata kuliah.</li>
-                            <li>Skor TOEFL minimal 400</li>
-                            <li>Bebas beban administratif.</li>
-                            <li>Setifikat seminar dan atau workshop sebanyak minimal 2 buah</li>
+                            <li>Mahasiswa sudah menyelesaikan kuliah minimal 120 SKS
+                            </li>
+                            <li>Mahasiswa lulus mata kuliah Metodologi Penelitian dengan nilai minimal C</li>
+                            <li>Dalam Daftar KHS tidak boleh ada nilai E</li>
+                            <li>IPK minimal 2.0</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button bg-white collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Syarat Sidang Tugas Akhir 1
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <ol>
+                            <li>Memenuhi syarat administrasi dan akademik TA 1</li>
+                            <li>Melakukan bimbingan setidaknya 3 kali</li>
+                            <li>Telah di ACC oleh dosen pembimbing sampai dengan BAB III</li>
+                            <li>Turnitin max 25% kesamaan</li>
+                            <li>Pakaian yang digunakan saat Sidang TA 1, menggunakan bahu putih berkerah dan jas
+                                almamater</li>
                         </ol>
                     </div>
                 </div>
