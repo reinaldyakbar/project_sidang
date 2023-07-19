@@ -40,7 +40,6 @@
     <!-- navbar collapse -->
 </nav>
 <!-- navbar area -->
-<header>
     <div id="home" class="intro-section">
         <div class="container">
             <div class="row justify-content-center">
@@ -152,13 +151,13 @@
             style="background-image: url('<?php echo base_url() ?>assets/front-end/assets/images/info.svg'); background-size: cover;"
             data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
             <div class="row ">
-                <div class="col-xxl-12 ">
+                <div class="col-lg-12 ">
                     <div class="text-center my-5">
                         <h2 class="display-7 fw-bolder mb-5 "><span class="text-white d-inline ">Informasi Tugas
                                 Akhir</span></h2>
                         <div class="d-flex justify-content-center fs-5 gap-1 ">
-                            <h3 class="paragraf1 text-white"> Tugas Akhir 1</h3>
-                            <h3 class="paragraf1 text-white"> Tugas Akhir 2</h3>
+                            <h3 class="paragraf1"><a href="<?php echo base_url('dashboard/informasi/ta1') ?>" class="text-white text-decoration-none"> Tugas Akhir 1</a></h3>
+                            <h3 class="paragraf1"><a href="<?php echo base_url('dashboard/informasi/ta2') ?>" class="text-white text-decoration-none"> Tugas Akhir 2</a></h3>
                         </div>
                     </div>
                 </div>
