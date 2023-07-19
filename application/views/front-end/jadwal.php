@@ -7,47 +7,76 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-12 d-flex justify-content-center align-items-center">
-            <div class="table-container rounded-4 text-center" style="width: 700px;">
-                <table class="table">
-                    <thead>
-                        <tr class="text-center" style="background: linear-gradient(to right, #44FFDD, #FF5F6D);">
-                            <th>Gelombang</th>
-                            <th>Pendaftaran</th>
-                            <th>Estimasi Sidang</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="text-center">
-                            <td>I</td>
-                            <td>03 s.d 15 Mei 2023</td>
-                            <td>Mulai 22 Mei</td>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr class="text-center">
-                            <td>II</td>
-                            <td>29 Mei s.d 07 Juni 2023</td>
-                            <td>Mulai 12 Juni </td>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr class="text-center">
-                            <td>III</td>
-                            <td>19 s.d 28 Juni 2023</td>
-                            <td>Mulai 03 Juli</td>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr class="text-center">
-                            <td>IV</td>
-                            <td>18 s.d 28 Juli 2023</td>
-                            <td>Mulai 01 Agustus</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <div class="container">
+        <h5>Rencana Sidang TA-1</h5>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped text-center table-hover">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">Gelombang</th>
+                        <th scope="col">Pendaftaran</th>
+                        <th scope="col">Estimasi Sidang</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>I</td>
+                        <td>27 s.d 31 Maret 2023</td>
+                        <td>Mulai 05 April 2023</td>
+                    </tr>
+                    <tr>
+                        <td>II</td>
+                        <td>16 s.d 25 Mei 2023</td>
+                        <td>Mulai 29 Mei 2023</td>
+                    </tr>
+                    <tr>
+                        <td>III</td>
+                        <td>05 s.d 14 Juni 2023</td>
+                        <td>Mulai 19 Juni 2023</td>
+                    </tr>
+                    <tr>
+                        <td>IV</td>
+                        <td>03 s.d 14 Juli 2023</td>
+                        <td>Mulai 20 Juli 2023</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <h5>Rencana Sidang TA-2</h5>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped text-center table-hover">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">Gelombang</th>
+                        <th scope="col">Pendaftaran</th>
+                        <th scope="col">Waktu Sidang</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>I</td>
+                        <td>03 s.d 15 Mei 2023</td>
+                        <td>Mulai 22 Mei 2023 <br> (mhs TA-2 non UAS)</td>
+                    </tr>
+                    <tr>
+                        <td>II</td>
+                        <td>29 Mei s.d 07 Juni 2023</td>
+                        <td>Mulai 12 Juni 2023 <br> (mhs TA-2 non UAS)</td>
+                    </tr>
+                    <tr>
+                        <td>III</td>
+                        <td>19 s.d 28 Juni 2023</td>
+                        <td>Mulai 03 Juli 2023 <br> (mhs TA-2 non UAS)</td>
+                    </tr>
+                    <tr>
+                        <td>IV</td>
+                        <td>18 s.d 30 Juli 2023</td>
+                        <td>Mulai 01 Agustus 2023 <br> (mhs TA-2 & MK UAS)</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>

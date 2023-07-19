@@ -25,9 +25,9 @@
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="informasiDropdown">
                                             <!-- Opsi 1 -->
-                                            <li><a class="dropdown-item text-black text-center" href="<?php echo base_url('dashboard/informasi/ta1') ?>">Tugas Akhir 1</a></li>
+                                            <li><a class="dropdown-item text-black text-center" href="<?php echo base_url('dashboard/info_ta1') ?>">Tugas Akhir 1</a></li>
                                             <!-- Opsi 2 -->
-                                            <li><a class="dropdown-item text-black text-center" href="<?php echo base_url('dashboard/informasi/ta2') ?>">Tugas Akhir 2</a></li>
+                                            <li><a class="dropdown-item text-black text-center" href="<?php echo base_url('dashboard/info_ta2') ?>">Tugas Akhir 2</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item mx-1"><a class="nav-link"
