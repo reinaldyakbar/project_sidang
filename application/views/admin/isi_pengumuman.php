@@ -1,9 +1,9 @@
 <div id="layoutSidenav_content">
-    <section class="bg-white py-5" style="margin-top: 104px; margin-bottom: 8px;">
+    <section class="bg-white py-5" style="margin-top: 20px; margin-bottom: 8px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="text-center mb-5 mt-4">
+                    <div class="text-center mt-4">
                         <h2 class="display-7 fw-bolder mb-5">
                             <span class="text-gradient d-inline">Pengumuman Tugas Akhir <br> Universitas Dian
                                 Nuswantoro</span>
@@ -23,18 +23,27 @@
                         <div class="blog_details">
                             <?php if (isset($pengumuman) && is_array($pengumuman)): ?>
                                 <?php foreach ($pengumuman as $png): ?>
-                                    <h1 class="mt-5">
-                                        <?php echo $png->judul; ?>
-                                    </h1>
-                                    <p class="blog-info-link mt-3 mb-4">
-                                        <i class="fa fa-time me-2"></i>
-                                        <?php echo $png->tanggal; ?>
-                                    </p>
+                                    <?php if ($png->id == $id_pengumuman): ?> <!-- Memeriksa ID pengumuman -->
+                                        <h1 class="mt-5">
+                                            <?php echo $png->judul; ?>
+                                        </h1>
+                                        <p class="blog-info-link mt-3 mb-4">
+                                            <i class="fa fa-time me-2"></i>
+                                            <?php echo date('d F Y', strtotime($png->tanggal)); ?> <!-- Menggunakan strtotime -->
+                                        </p>
 
-                                    <br><br>
-                                    <p>
-                                        <?php echo $png->isi_pengumuman; ?>
-                                    </p>
+                                        <br><br>
+                                        <p class="text-justify">
+                                            <?php echo $png->isi_pengumuman; ?>
+                                        </p>
+                                        <p>
+                                            <br />
+                                            Hormat kami,<br />
+                                            Koordinator TA<br />
+                                            <br />
+                                            <?php echo $png->koordinator; ?>
+                                        </p>
+                                    <?php endif; ?>
                                 <?php endforeach; ?>
                             <?php endif; ?>
                         </div>
@@ -43,6 +52,9 @@
             </div>
         </div>
     </section>
+
+
+
 </div>
 
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>

@@ -5,16 +5,10 @@ class Dashboard extends CI_Controller
 {
     public function index()
     {
+        $data['dosbim'] = $this->model_dosbim->getDosbim();
         $this->load->view('layout/front-header');
         $this->load->view('layout/front-navbar');
-        $this->load->view('front-end/index');
-        $this->load->view('layout/front-footer');
-    }
-    public function informasi()
-    {
-        $this->load->view('layout/front-header');
-        $this->load->view('layout/front-navbar');
-        $this->load->view('front-end/informasi');
+        $this->load->view('front-end/index', $data);
         $this->load->view('layout/front-footer');
     }
     public function info_ta1()
@@ -48,14 +42,23 @@ class Dashboard extends CI_Controller
         $this->load->view('front-end/pengumuman', $data);
         $this->load->view('layout/front-footer');
     }
-    public function isi_pengumuman()
+    public function isi_pengumuman($id = null)
     {
+        $data['pengumuman'] = $this->model_pengumuman->getPengumuman();
+
+        // Jika $id tidak diberikan, ambil ID pertama dari pengumuman
+        if ($id === null && isset($data['pengumuman'][0])) {
+            $data['id_pengumuman'] = $data['pengumuman'][0]->id;
+        } else {
+            $data['id_pengumuman'] = $id;
+        }
 
         $this->load->view('layout/front-header');
         $this->load->view('layout/front-navbar');
-        $this->load->view('front-end/isi_pengumuman');
+        $this->load->view('front-end/isi_pengumuman', $data);
         $this->load->view('layout/front-footer');
     }
+
     public function jadwal()
     {
         $this->load->view('layout/front-header');

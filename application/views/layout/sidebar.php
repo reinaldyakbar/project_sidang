@@ -36,8 +36,8 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="">TA</a>
-                                <a class="nav-link" href="">Jadwal Sidang TA</a>
+                                <a class="nav-link" href="">TA 1</a>
+                                <a class="nav-link" href="">TA 2</a>
                             </nav>
                         </div>
                         <ul class="nav">

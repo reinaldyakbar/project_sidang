@@ -74,7 +74,15 @@
             <input type="text" id="judul" name="judul" required>
 
             <label for="tanggal">Tanggal:</label>
-            <input type="date" id="tanggal" name="tanggal" required>
+            <div class="input-group">
+                <span class="input-group-text">
+                    <i class="fas fa-calendar-alt"></i>
+                </span>
+                <input type="text" id="tanggal" name="tanggal" class="form-control" required>
+            </div>
+
+            <label for="koordinator">Koordinator:</label>
+            <input type="text" id="koordinator" name="koordinator" required>
 
             <label for="isi_pengumuman">Isi Pengumuman:</label>
             <textarea id="isi_pengumuman" name="isi_pengumuman" rows="4" required></textarea>
@@ -83,3 +91,13 @@
         </form>
     </div>
 </div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+<script>
+    flatpickr('#tanggal', {
+        dateFormat: 'd, F Y',
+        minDate: 'today',
+    });
+</script>

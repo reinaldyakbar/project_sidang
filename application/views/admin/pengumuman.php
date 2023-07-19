@@ -17,26 +17,33 @@
                                 <table id="example" class="table-striped table-bordered table-responsive-sm">
                                     <thead class="text-black">
                                         <tr>
-                                            <th class="text-center" width='3%'>No</th>
-                                            <th class="text-center" width='80%'>Judul</th>
-                                            <th class="text-center" width='17%'>Tanggal</th>
+                                            <th class="text-center" width='3%'>
+                                                No
+                                            </th>
+                                            <th class="text-center" width='80%'>
+                                                Judul
+                                            </th>
+                                            <th class="text-center" width='17%'>
+                                                Tanggal
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php if (isset($pengumuman) && is_array($pengumuman)): ?>
-                                            <?php foreach ($pengumuman as $png): ?>
+                                            <?php foreach ($pengumuman as $index => $png): ?>
                                                 <tr>
                                                     <td>
-                                                        <?php echo $png->no; ?>
+                                                        <?php echo $png->id; ?>
                                                     </td>
                                                     <td>
-                                                        <a class="text-decoration-none text-black"
-                                                            href="<?php echo base_url('pengumuman/isi_pengumuman') ?>">
+                                                        <a class="text-decoration-none"
+                                                            href="<?php echo base_url('pengumuman/isi_pengumuman/' . $index); ?>">
                                                             <?php echo $png->judul; ?>
                                                         </a>
                                                     </td>
                                                     <td>
-                                                        <?php echo $png->tanggal; ?>
+                                                        <?php echo date('d F Y', strtotime($png->tanggal)); ?>
+                                                        <!-- Menggunakan strtotime -->
                                                     </td>
                                                 </tr>
                                             <?php endforeach; ?>
@@ -47,10 +54,8 @@
                         </article>
                         <div class="text-center">
                             <a class="btn btn-primary"
-                                href="<?php echo base_url('pengumuman/tambah_pengumuman') ?>">Tambah
-                                Pengumuman</a>
+                                href="<?php echo base_url('pengumuman/tambah_pengumuman') ?>">Tambah Pengumuman</a>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -63,6 +68,6 @@
 <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
 <script>
     $(document).ready(function () {
-        new DataTable('#example');
+        $('#example').DataTable();
     });
 </script>
