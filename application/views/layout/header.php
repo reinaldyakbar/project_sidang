@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/assets/style/style.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/assets/style/responsive.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/assets/style/lightbox.css">
     <!-- DOSBIM -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css

@@ -7,6 +7,14 @@
 <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
     crossorigin="anonymous"></script>
 <script src="<?php echo base_url() ?>assets/js/datatables-simple-demo.js"></script>
+<script src="<?php echo base_url() ?>assets/front-end/assets/style/lightbox.js"></script>
+<script>
+    // Inisialisasi Lightbox
+    lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true
+    });
+</script>
 </body>
 
 </html>
