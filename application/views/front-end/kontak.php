@@ -43,6 +43,9 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-12 text-center text-white">
+                <p>Senin - Jumat, 08.00 - 16.00</p>
+            </div>
 
         </div>
     </div>
@@ -52,6 +55,8 @@
             <div class="col-lg-12 d-flex align-items-center justify-content-between">
                 <ul class="list-unstyled txt-footer" style="margin-right: 100px; margin-left: 100px; margin-top: 17px;">
                     <li>
+                        <h4><a href="mailto:tatis1@dinus.web.id" class="text-white text-decoration-none">Email : tatis1@dinus.web.id</a></h4>
+                        <hr class="border-3">
                         <h4 style="color: floralwhite;">Gedung H Lt. 2 Kampus Udinus Jl. Imam Bonjol No.207
                             Pendrikan Kidul, Kec. Semarang Tengah Kota Semarang, Jawa Tengah 50131</h4>
                     </li>

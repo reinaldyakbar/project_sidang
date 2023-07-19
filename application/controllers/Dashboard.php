@@ -17,6 +17,20 @@ class Dashboard extends CI_Controller
         $this->load->view('front-end/informasi');
         $this->load->view('layout/front-footer');
     }
+    public function info_ta1()
+    {
+        $this->load->view('layout/front-header');
+        $this->load->view('layout/front-navbar');
+        $this->load->view('front-end/info_ta1');
+        $this->load->view('layout/front-footer');
+    }
+    public function info_ta2()
+    {
+        $this->load->view('layout/front-header');
+        $this->load->view('layout/front-navbar');
+        $this->load->view('front-end/info_ta2');
+        $this->load->view('layout/front-footer');
+    }
     public function dosbim()
     {
         $data['dosbim'] = $this->model_dosbim->getDosbim();
