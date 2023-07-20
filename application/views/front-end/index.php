@@ -159,9 +159,9 @@
                     <h2 class="display-7 fw-bolder mb-5 "><span class="text-white d-inline ">Informasi Tugas
                             Akhir</span></h2>
                     <div class="d-flex justify-content-center fs-5 gap-1 ">
-                        <h3 class="paragraf1"><a href="<?php echo base_url('dashboard/informasi/ta1') ?>"
+                        <h3 class="paragraf1"><a href="<?php echo base_url('dashboard/info_ta1') ?>"
                                 class="text-white text-decoration-none"> Tugas Akhir 1</a></h3>
-                        <h3 class="paragraf1"><a href="<?php echo base_url('dashboard/informasi/ta2') ?>"
+                        <h3 class="paragraf1"><a href="<?php echo base_url('dashboard/info_ta2') ?>"
                                 class="text-white text-decoration-none"> Tugas Akhir 2</a></h3>
                     </div>
                 </div>
@@ -175,7 +175,7 @@
 <section class="bg-light py-5 my-5">
     <div class="container px-5 ">
         <div class="container ">
-            <div class="row mb-2 ">
+            <div class="row mb-2">
                 <div class="col-6 " data-aos="fade-right" data-aos-duration="2000">
                     <h5 class="txt-profil">Profil Dosen Pembimbing</h5>
                 </div>
@@ -189,7 +189,7 @@
             <div class="col-lg-12 col-md-12">
                 <div class="text-center my-2 ">
                     <div class="container ">
-                        <div class="row">
+                        <div class="row  justify-content-between">
                             <?php foreach ($dosbim as $dsn): ?>
                                 <div class="col-lg-2 col-md-6 col-sm-4 mb-3 " data-aos="fade-up" data-aos-duration="2000">
 
