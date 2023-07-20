@@ -208,16 +208,11 @@
                                 </div>
                             <?php endforeach; ?>
                         </div>
-<<<<<<< Updated upstream
-=======
-                        <a href="#" class="mt-5 text-gradient text-judul text-decoration-none ">Selengkapnya</a>
->>>>>>> Stashed changes
                     </div>
 
                 </div>
             </div>
         </div>
-<<<<<<< Updated upstream
     </div>
 </section>
 <!-- card -->
@@ -231,89 +226,6 @@
                         <div class="row">
                             <div class="col-lg-12 text-center my-4">
                                 <h3>Pengumuman Tugas Akhir</h3>
-=======
-    </section>
-    <!-- informasi end -->
-
-    <!-- Profil Dosbim -->
-    <section class="bg-light py-5 my-5">
-        <div class="container px-5 ">
-            <div class="container ">
-                <div class="row mb-2 ">
-                    <div class="col-6 " data-aos="fade-right" data-aos-duration="2000">
-                        <h5 class="txt-profil">Profil Dosen Pembimbing</h5>
-                    </div>
-                    <div class="col-6 text-end " data-aos="fade-left" data-aos-duration="2000">
-                        <a href="<?php echo base_url('dashboard/dosbim') ?>" class="text-gradient text-decoration-none text-judul">Selengkapnya</a>
-                    </div>
-                </div>
-            </div>
-            <div class="row gx-5">
-                <div class="col-lg-12 col-md-12">
-                    <div class="text-center my-2 ">
-                        <div class="container ">
-                            <div class="row justify-content-between ">
-                                <div class="col-lg-2 col-md-6 col-sm-4 mb-3 " data-aos="fade-up"
-                                    data-aos-duration="2000">
-                                    <div class="card rounded-5 border-0 ">
-                                        <img src="<?php echo base_url() ?>assets/front-end/assets/images/profil1.svg "
-                                            class="card-img-top card2" alt="Profile Picture 1"
-                                            style="border-radius: 35px;">
-                                        <div class="card-body ">
-                                            <h5 class="card-title small">Defri Kurniawan M.Kom</h5>
-                                            <h6 class="card-title card-sub-title">RPLD</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-6 col-sm-4 mb-3 " data-aos="fade-up"
-                                    data-aos-duration="2000">
-                                    <div class="card rounded-5 border-0 ">
-                                        <img src="<?php echo base_url() ?>assets/front-end/assets/images/profil2.svg "
-                                            class="card-img-top card2" alt="Profile Picture 2 "
-                                            style="border-radius: 35px;">
-                                        <div class="card-body ">
-                                            <h5 class="card-title small">Yani Parti Astuti S.Si, M.Kom</h5>
-                                            <h6 class="card-title ">SC</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-6 col-sm-4 mb-3 " data-aos="fade-up"
-                                    data-aos-duration="2000">
-                                    <div class="card w-100 rounded-5 border-0 ">
-                                        <img src="<?php echo base_url() ?>assets/front-end/assets/images/profil3.svg "
-                                            class="card-img-top card2" alt="Profile Picture 3 "
-                                            style="border-radius: 35px;">
-                                        <div class="card-body ">
-                                            <h5 class="card-title small">DR Solichul Huda M.Kom</h5>
-                                            <h6 class="card-title ">SKKKD</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-6 col-sm-4 mb-3 " data-aos="fade-up"
-                                    data-aos-duration="2000">
-                                    <div class="card rounded-5 border-0 ">
-                                        <img src="<?php echo base_url() ?>assets/front-end/assets/images/profil4.svg "
-                                            class="card-img-top card2" alt="Profile Picture 4 "
-                                            style="border-radius: 35px;">
-                                        <div class="card-body ">
-                                            <h5 class="card-title small">Junta Zeniarja M.Kom</h5>
-                                            <h6 class="card-title ">RPLD</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-6 col-sm-4 mb-3 " data-aos="fade-up"
-                                    data-aos-duration="2000">
-                                    <div class="card rounded-5 border-0 ">
-                                        <img src="<?php echo base_url() ?>assets/front-end/assets/images/profil5.svg "
-                                            class="card-img-top card2" alt="Profile Picture 5 "
-                                            style="border-radius: 35px;">
-                                        <div class="card-body ">
-                                            <h5 class="card-title small">Christy Atika Sari M.Kom</h5>
-                                            <h6 class="card-title ">SC</h6>
-                                        </div>
-                                    </div>
-                                </div>
->>>>>>> Stashed changes
                             </div>
                             <div class="col-lg-12">
                                 <button class="btn-1 border-0 bg-white rounded-3">
