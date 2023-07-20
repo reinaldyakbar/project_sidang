@@ -17,6 +17,7 @@
                 </tr>
             </thead>
             <tbody>
+<<<<<<< Updated upstream
                 <?php foreach ($dosbim as $dsn): ?>
                     <tr>
                         <td>
@@ -36,6 +37,106 @@
                         </td>
                     </tr>
                 <?php endforeach; ?>
+=======
+                <tr>
+                    <td>
+                        <a href="<?php echo base_url() ?>assets/front-end/assets/images/profil1.svg"
+                            data-lightbox="avatar">
+                            <img src="<?php echo base_url() ?>assets/front-end/assets/images/profil1.svg" alt="Avatar"
+                                style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;">
+                        </a>
+                        <span>Defri Kurniawan</span>
+                    </td>
+                    <td>0686.11.2013.536</td>
+                    <td>RPLD</td>
+                </tr>
+                <tr>
+                    <td>
+                    <a href="<?php echo base_url() ?>assets/front-end/assets/images/profil2.svg"
+                        data-lightbox="avatar">
+                        <img src="<?php echo base_url() ?>assets/front-end/assets/images/profil2.svg" alt="Avatar"
+                            style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;">
+                    </a>                
+                    <span>Yani Parti Astuti S.Si, M.Kom</span>
+                </td>
+                    <td>0686.11.2013.532</td>
+                    <td>SC</td>
+                </tr>
+                <tr>
+                    <td>
+                    <a href="<?php echo base_url() ?>assets/front-end/assets/images/profil3.svg"
+                        data-lightbox="avatar">
+                        <img src="<?php echo base_url() ?>assets/front-end/assets/images/profil3.svg" alt="Avatar"
+                            style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;">
+                    </a>        
+                            <span>DR Solichul Huda M.Kom</span></td>
+                    <td>0686.11.1997.130</td>
+                    <td>SKKKD</td>
+                </tr>
+                <tr>
+                    <td><img src="<?php echo base_url() ?>assets/front-end/assets/images/profil4.svg" alt="Avatar"
+                            style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;"><span>Junta
+                            Zeniarja M.Kom</span></td>
+                    <td>0686.11.2012.459</td>
+                    <td>RPLD</td>
+                </tr>
+                <tr>
+                    <td><img src="<?php echo base_url() ?>assets/front-end/assets/images/profil5.svg" alt="Avatar"
+                            style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;"><span>Christy
+                            Atika Sari M.Kom</span></td>
+                    <td>0686.11.2012.407</td>
+                    <td>SC</td>
+                </tr>
+                <tr>
+                    <td><img src="<?php echo base_url() ?>assets/front-end/assets/images/profil5.svg" alt="Avatar"
+                            style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;"><span>Christy
+                            Atika Sari M.Kom</span></td>
+                    <td>0686.11.2012.407</td>
+                    <td>SC</td>
+                </tr>
+                <tr>
+                    <td><img src="<?php echo base_url() ?>assets/front-end/assets/images/profil5.svg" alt="Avatar"
+                            style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;"><span>Christy
+                            Atika Sari M.Kom</span></td>
+                    <td>0686.11.2012.407</td>
+                    <td>SC</td>
+                </tr>
+                <tr>
+                    <td><img src="<?php echo base_url() ?>assets/front-end/assets/images/profil5.svg" alt="Avatar"
+                            style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;"><span>Christy
+                            Atika Sari M.Kom</span></td>
+                    <td>0686.11.2012.407</td>
+                    <td>SC</td>
+                </tr>
+                <tr>
+                    <td><img src="<?php echo base_url() ?>assets/front-end/assets/images/profil5.svg" alt="Avatar"
+                            style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;"><span>Christy
+                            Atika Sari M.Kom</span></td>
+                    <td>0686.11.2012.407</td>
+                    <td>SC</td>
+                </tr>
+                <tr>
+                    <td><img src="<?php echo base_url() ?>assets/front-end/assets/images/profil5.svg" alt="Avatar"
+                            style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;"><span>Christy
+                            Atika Sari M.Kom</span></td>
+                    <td>0686.11.2012.407</td>
+                    <td>SC</td>
+                </tr>
+                <tr>
+                    <td><img src="<?php echo base_url() ?>assets/front-end/assets/images/profil5.svg" alt="Avatar"
+                            style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;"><span>Christy
+                            Atika Sari M.Kom</span></td>
+                    <td>0686.11.2012.407</td>
+                    <td>SC</td>
+                </tr>
+                <tr>
+                    <td><img src="<?php echo base_url() ?>assets/front-end/assets/images/profil5.svg" alt="Avatar"
+                            style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;"><span>Christy
+                            Atika Sari M.Kom</span></td>
+                    <td>0686.11.2012.407</td>
+                    <td>SC</td>
+                </tr>
+>>>>>>> Stashed changes
             </tbody>
         </table>
     </div>
