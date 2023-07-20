@@ -189,7 +189,7 @@
             <div class="col-lg-12 col-md-12">
                 <div class="text-center my-2 ">
                     <div class="container ">
-                        <div class="row justify-content-between ">
+                        <div class="row">
                             <?php foreach ($dosbim as $dsn): ?>
                                 <div class="col-lg-2 col-md-6 col-sm-4 mb-3 " data-aos="fade-up" data-aos-duration="2000">
 
