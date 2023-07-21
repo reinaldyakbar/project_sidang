@@ -31,6 +31,7 @@ class Pengumuman extends CI_Controller
             'id' => $id
         );
 
+
         $this->model_pengumuman->insert($data, 'tb_pengumuman');
         $_SESSION["sukses"] = 'pengumuman berhasil ditambahkan';
         redirect('pengumuman/index');

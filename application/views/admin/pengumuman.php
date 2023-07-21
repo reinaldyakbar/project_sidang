@@ -42,13 +42,16 @@
                                                         </a>
                                                     </td>
                                                     <td>
-                                                        <?php echo date('d F Y', strtotime($png->tanggal)); ?>
-                                                        <!-- Menggunakan strtotime -->
+                                                        <?php
+                                                        // Ubah format tanggal dari database ke format "tanggal, bulan tahun"
+                                                        echo date('d F Y', strtotime($png->tanggal));
+                                                        ?>
                                                     </td>
                                                 </tr>
                                             <?php endforeach; ?>
                                         <?php endif; ?>
                                     </tbody>
+
                                 </table>
                             </div>
                         </article>

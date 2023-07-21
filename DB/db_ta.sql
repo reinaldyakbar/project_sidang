@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Jul 2023 pada 06.14
+-- Waktu pembuatan: 21 Jul 2023 pada 14.57
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 7.4.33
 
@@ -20,6 +20,45 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_ta`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_admin`
+--
+
+CREATE TABLE `tb_admin` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(128) NOT NULL,
+  `username` varchar(128) NOT NULL,
+  `password` varchar(128) NOT NULL,
+  `role_id` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_dosbim`
+--
+
+CREATE TABLE `tb_dosbim` (
+  `id` int(11) NOT NULL,
+  `npp` varchar(128) NOT NULL,
+  `nama` varchar(128) NOT NULL,
+  `bidang` varchar(128) NOT NULL,
+  `gambar` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `tb_dosbim`
+--
+
+INSERT INTO `tb_dosbim` (`id`, `npp`, `nama`, `bidang`, `gambar`) VALUES
+(3, '0686.11.2013.536', 'Defri Kurniawan, M.Kom', 'RPLD', 'profil16.svg'),
+(4, '0686.11.2013.536', 'Defri Kurniawan, M.Kom', 'RPLD', 'profil16.svg'),
+(5, '0686.11.2013.536', 'Defri Kurniawan, M.Kom', 'RPLD', 'profil16.svg'),
+(6, '0686.11.2013.536', 'Defri Kurniawan, M.Kom', 'RPLD', 'profil16.svg'),
+(7, '0686.11.2013.536', 'Defri Kurniawan, M.Kom', 'RPLD', 'profil16.svg');
 
 -- --------------------------------------------------------
 
@@ -49,11 +88,24 @@ INSERT INTO `tb_pengumuman` (`id`, `judul`, `isi_pengumuman`, `koordinator`, `ta
 (7, 'PSOSJOJSOJS', 'wwwwwwwwwwwwww', 'DANANG WAHYU UTOMO, M.Kom', '0000-00-00'),
 (8, 'Udinus', 'wwwwwww', 'DANANG WAHYU UTOMO, M.Kom', '0000-00-00'),
 (9, 'PSOSJOJSOJS', 'wwwwwwwwwwwwwww', 'DANANG WAHYU UTOMO, M.Kom', '0000-00-00'),
-(10, 'Pengumuman Tugas Akhir Universitas Dian Nuswantoro', 'ssssssaaaaaaaaaaaaaaaaaaaaasssssssssssssss', 'DANANG WAHYU UTOMO, M.Kom', '0000-00-00');
+(10, 'Pengumuman Tugas Akhir Universitas Dian Nuswantoro', 'ssssssaaaaaaaaaaaaaaaaaaaaasssssssssssssss', 'DANANG WAHYU UTOMO, M.Kom', '0000-00-00'),
+(11, 'Hahaha', 'Hayioo', 'Wildan', '0000-00-00');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `tb_admin`
+--
+ALTER TABLE `tb_admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `tb_dosbim`
+--
+ALTER TABLE `tb_dosbim`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `tb_pengumuman`
@@ -66,10 +118,22 @@ ALTER TABLE `tb_pengumuman`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `tb_admin`
+--
+ALTER TABLE `tb_admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_dosbim`
+--
+ALTER TABLE `tb_dosbim`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT untuk tabel `tb_pengumuman`
 --
 ALTER TABLE `tb_pengumuman`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

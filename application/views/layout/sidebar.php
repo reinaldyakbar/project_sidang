@@ -40,6 +40,10 @@
                                 <a class="nav-link" href="">TA 2</a>
                             </nav>
                         </div>
+                        <a class="nav-link" href="<?php echo base_url('admin/jadwal') ?>">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Jadwal
+                        </a>
                         <ul class="nav">
                             <li class="nav-item">
                                 <a class="nav-link" href="<?php echo base_url('admin/logout') ?>">
