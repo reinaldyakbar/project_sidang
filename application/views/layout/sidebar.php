@@ -36,11 +36,11 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="">TA 1</a>
-                                <a class="nav-link" href="">TA 2</a>
+                                <a class="nav-link" href="<?php echo base_url('informasi/info_ta1') ?>">TA 1</a>
+                                <a class="nav-link" href="<?php echo base_url('informasi/info_ta2') ?>">TA 2</a>
                             </nav>
                         </div>
-                        <a class="nav-link" href="<?php echo base_url('admin/jadwal') ?>">
+                        <a class="nav-link" href="<?php echo base_url('jadwal/index') ?>">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Jadwal
                         </a>

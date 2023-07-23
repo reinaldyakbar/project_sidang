@@ -10,20 +10,19 @@
         </div>
     </div>
     <div class="row d-flex justify-content-center">
-        <div class="col-lg-6 mx-4" style="width: 500px; height: 350px; border-radius: 25px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);">
+        <div class="col-lg-6 mx-4"
+            style="width: 500px; height: 350px; border-radius: 25px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);">
             <div class="text-center mt-5 mb-5">
                 <h5 class="display-7 fw-bolder mb-3 "><span class=" d-inline ">Prosedur Tugas Akhir 1</span></h5>
             </div>
             <div class="row">
                 <div class="col-lg-12 px-5">
                     <ol>
-                        <li>Pengarahan TA 1</li>
-                        <li>Pemilihan Dosbim</li>
-                        <li>Pembimbingan oleh dosen pembimbing</li>
-                        <li>Membuat TA 1</li>
-                        <li>Mendaftar sidang TA 1</li>
-                        <li>Ujian TA 1</li>
-                        <li>Nilai TA 1 keluar</li>
+                        <?php foreach ($info_ta1 as $info): ?>
+                            <li>
+                                <?php echo $info['prosedur_ta1']; ?>
+                            </li>
+                        <?php endforeach; ?>
                     </ol>
                 </div>
             </div>
@@ -31,7 +30,8 @@
         <div class="col-lg-6 mx-4"
             style="width: 500px; height: 350px; border-radius: 25px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);">
             <div class="text-center mt-5 mb-5">
-                <h5 class="display-7 fw-bolder mb-3 "><span class=" d-inline ">Syarat Administrasi Tugas Akhir 1</span></h5>
+                <h5 class="display-7 fw-bolder mb-3 "><span class=" d-inline ">Syarat Administrasi Tugas Akhir 1</span>
+                </h5>
             </div>
             <div class="row">
                 <div class="col-lg-12 px-5">

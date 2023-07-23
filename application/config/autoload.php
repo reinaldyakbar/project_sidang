@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('model_dosbim', 'model_pengumuman');
+$autoload['model'] = array('model_dosbim', 'model_pengumuman', 'model_jadwal', 'model_informasi');

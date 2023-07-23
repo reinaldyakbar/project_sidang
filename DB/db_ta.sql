@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Jul 2023 pada 14.57
+-- Waktu pembuatan: 23 Jul 2023 pada 19.15
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 7.4.33
 
@@ -63,6 +63,88 @@ INSERT INTO `tb_dosbim` (`id`, `npp`, `nama`, `bidang`, `gambar`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `tb_informasi_ta1`
+--
+
+CREATE TABLE `tb_informasi_ta1` (
+  `id` int(11) NOT NULL,
+  `prosedur_ta1` text NOT NULL,
+  `syarat_admin_ta1` text NOT NULL,
+  `syarat_akademik_ta1` text NOT NULL,
+  `syarat_sidang_ta1` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `tb_informasi_ta1`
+--
+
+INSERT INTO `tb_informasi_ta1` (`id`, `prosedur_ta1`, `syarat_admin_ta1`, `syarat_akademik_ta1`, `syarat_sidang_ta1`) VALUES
+(5, '1. Pengarahan TA 1\r\n2. Pemilihan Dosbim\r\n3. Pembimbingan oleh dosen pembimbing\r\n4. Membuat TA 1\r\n5. Mendaftar sidang TA 1\r\n6. Ujian TA 1\r\n7. Nilai TA 1 keluar', 'ssssss', 'sssss', 'ssss');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_informasi_ta2`
+--
+
+CREATE TABLE `tb_informasi_ta2` (
+  `id` int(11) DEFAULT NULL,
+  `prosedur_ta2` text NOT NULL,
+  `syarat_admin_ta2` text NOT NULL,
+  `syarat_akademik_ta2` text NOT NULL,
+  `syarat_sidang_ta2` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_jadwal_ta1`
+--
+
+CREATE TABLE `tb_jadwal_ta1` (
+  `id` int(11) NOT NULL,
+  `gelombang` varchar(50) NOT NULL,
+  `pendaftaran` varchar(128) NOT NULL,
+  `estimasi_sidang` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `tb_jadwal_ta1`
+--
+
+INSERT INTO `tb_jadwal_ta1` (`id`, `gelombang`, `pendaftaran`, `estimasi_sidang`) VALUES
+(1, 'I', '27 s.d 31 Maret 2023', 'Mulai 05 April 2023'),
+(2, 'II', '16 s.d 25 Mei 2023\r\n                        ', 'Mulai 29 Mei 2023'),
+(3, 'III', '05 s.d 14 Juni 2023', 'Mulai 19 Juni 2023'),
+(4, 'IV', '03 s.d 14 Juli 2023', 'Mulai 20 Juli 2023');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_jadwal_ta2`
+--
+
+CREATE TABLE `tb_jadwal_ta2` (
+  `id` int(11) NOT NULL,
+  `gelombang` varchar(50) NOT NULL,
+  `pendaftaran` varchar(128) NOT NULL,
+  `waktu_sidang` varchar(128) NOT NULL,
+  `keterangan` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `tb_jadwal_ta2`
+--
+
+INSERT INTO `tb_jadwal_ta2` (`id`, `gelombang`, `pendaftaran`, `waktu_sidang`, `keterangan`) VALUES
+(1, 'I', '03 s.d 15 Mei 2023', 'Mulai 22 Mei 2023', '(mhs TA-2 non UAS)'),
+(2, 'II', '29 Mei s.d 07 Juni 2023', 'Mulai 12 Juni 2023', '(mhs TA-2 non UAS)'),
+(3, 'III', '19 s.d 28 Juni 2023', 'Mulai 03 Juli 2023', '(mhs TA-2 non UAS)'),
+(4, 'IV', '18 s.d 30 Juli 2023', 'Mulai 01 Agustus 2023', '(mhs TA-2 & MK UAS)');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tb_pengumuman`
 --
 
@@ -108,6 +190,24 @@ ALTER TABLE `tb_dosbim`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `tb_informasi_ta1`
+--
+ALTER TABLE `tb_informasi_ta1`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `tb_jadwal_ta1`
+--
+ALTER TABLE `tb_jadwal_ta1`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `tb_jadwal_ta2`
+--
+ALTER TABLE `tb_jadwal_ta2`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `tb_pengumuman`
 --
 ALTER TABLE `tb_pengumuman`
@@ -128,6 +228,24 @@ ALTER TABLE `tb_admin`
 --
 ALTER TABLE `tb_dosbim`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_informasi_ta1`
+--
+ALTER TABLE `tb_informasi_ta1`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_jadwal_ta1`
+--
+ALTER TABLE `tb_jadwal_ta1`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_jadwal_ta2`
+--
+ALTER TABLE `tb_jadwal_ta2`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_pengumuman`

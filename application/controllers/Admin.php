@@ -96,6 +96,13 @@ class Admin extends CI_Controller
         $this->model_dosbim->delete($where, 'tb_dosbim');
         redirect('admin/dosbim');
     }
+    public function jadwal()
+    {
+        $this->load->view('layout/header');
+        $this->load->view('layout/sidebar');
+        $this->load->view('admin/jadwal');
+        $this->load->view('layout/footer');
+    }
 
 
 }

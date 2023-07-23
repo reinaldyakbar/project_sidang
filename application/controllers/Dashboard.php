@@ -13,9 +13,10 @@ class Dashboard extends CI_Controller
     }
     public function info_ta1()
     {
+        $data['info_ta1'] = $this->model_informasi->getInfoTA1();
         $this->load->view('layout/front-header');
         $this->load->view('layout/front-navbar');
-        $this->load->view('front-end/info_ta1');
+        $this->load->view('front-end/info_ta1', $data);
         $this->load->view('layout/front-footer');
     }
     public function info_ta2()
@@ -61,9 +62,11 @@ class Dashboard extends CI_Controller
 
     public function jadwal()
     {
+        $data['ta1_jadwal'] = $this->model_jadwal->getTA1Jadwal();
+        $data['ta2_jadwal'] = $this->model_jadwal->getTA2Jadwal();
         $this->load->view('layout/front-header');
         $this->load->view('layout/front-navbar');
-        $this->load->view('front-end/jadwal');
+        $this->load->view('front-end/jadwal', $data);
         $this->load->view('layout/front-footer');
     }
     public function kontak()
