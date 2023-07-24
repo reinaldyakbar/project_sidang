@@ -36,8 +36,11 @@
             <div class="row">
                 <div class="col-lg-12 px-5">
                     <ol>
-                        <li>Mahasiswa terdaftar sebagai mahasiswa aktif</li>
-                        <li>Mahasiswa tersebut sudah menginput KRS Tugas Akhir 1</li>
+                        <?php foreach ($info_ta1 as $info): ?>
+                            <li>
+                                <?php echo $info['syarat_admin_ta1']; ?>
+                            </li>
+                        <?php endforeach; ?>
                     </ol>
                 </div>
             </div>
@@ -56,11 +59,11 @@
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <ol>
-                            <li>Mahasiswa sudah menyelesaikan kuliah minimal 120 SKS
-                            </li>
-                            <li>Mahasiswa lulus mata kuliah Metodologi Penelitian dengan nilai minimal C</li>
-                            <li>Dalam Daftar KHS tidak boleh ada nilai E</li>
-                            <li>IPK minimal 2.0</li>
+                            <?php foreach ($info_ta1 as $info): ?>
+                                <li>
+                                    <?php echo $info['syarat_akademik_ta1']; ?>
+                                </li>
+                            <?php endforeach; ?>
                         </ol>
                     </div>
                 </div>
@@ -76,12 +79,11 @@
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <ol>
-                            <li>Memenuhi syarat administrasi dan akademik TA 1</li>
-                            <li>Melakukan bimbingan setidaknya 3 kali</li>
-                            <li>Telah di ACC oleh dosen pembimbing sampai dengan BAB III</li>
-                            <li>Turnitin max 25% kesamaan</li>
-                            <li>Pakaian yang digunakan saat Sidang TA 1, menggunakan bahu putih berkerah dan jas
-                                almamater</li>
+                            <?php foreach ($info_ta1 as $info): ?>
+                                <li>
+                                    <?php echo $info['syarat_sidang_ta1']; ?>
+                                </li>
+                            <?php endforeach; ?>
                         </ol>
                     </div>
                 </div>
@@ -91,11 +93,37 @@
 
 </section>
 <section class="bg-white py-5" style="margin-top: 8px; margin-bottom: 104px;">
-    <div class="container px-5 ">
+    <div class="container px-5">
         <div class="row d-flex justify-content-center">
-            <button class="btn-2" style="width: 250px; height: 50px;">
+            <!-- Tombol unduh PDF -->
+            <button class="btn-2" style="width: 250px; height: 50px;" onclick="unduhPDF()">
                 <span>Unduh Panduan</span><i></i>
             </button>
         </div>
     </div>
 </section>
+
+<script>
+    function unduhPDF() {
+        // Ganti 'nama_file.pdf' dengan alamat lengkap dan benar dari file PDF yang ingin diunduh
+        var fileURL = 'uploads/buku_ta_2019.pdf';
+
+        // Membuat elemen anchor
+        var a = document.createElement('a');
+
+        // Memberikan atribut href untuk menunjuk ke file PDF
+        a.href = fileURL;
+
+        // Menetapkan atribut download dengan nama file yang diinginkan oleh pengguna
+        a.download = 'buku_ta_2019.pdf';
+
+        // Menambahkan elemen anchor ke body dokumen
+        document.body.appendChild(a);
+
+        // Menginisiasi klik pada elemen anchor untuk memulai proses pengunduhan
+        a.click();
+
+        // Menghapus elemen anchor dari body dokumen (opsional, tetapi bisa berguna untuk tampilan)
+        document.body.removeChild(a);
+    }
+</script>

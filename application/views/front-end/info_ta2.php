@@ -13,24 +13,20 @@
         <div class="accordion" id="accordionExample" style="width: 1050px;">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <button class="accordion-button bg-white" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         Pola dan Bentuk Tugas Akhir
                     </button>
                 </h2>
-                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <ol>
-                            <li>Tugas Akhir Reguler
-                                <p>Dapat ditempuh dengan bermacam bentuk seperti:</p>
-                                <ul>
-                                    <li>Kajian Ilmiah</li>
-                                    <li>Kajian Prototipe</li>
-                                    <li>Perancangan Perangkat Informatika</li>
-                                    <li>Pengembangan Perangkat Informatika</li>
-                                </ul>
-                            </li>
-                            <li>Kuliah Kerja Industri (KKI)</li>
-                            <li>Publikasi Jurnal Internasional Bereputasi (Terindeks Scopus minim Q3) atau dengan Konferensi Internasional (terindex Scopus)</li>
+                            <?php foreach ($info_ta2 as $info): ?>
+                                <li>
+                                    <?php echo $info['pola_bentuk_ta2']; ?>
+                                </li>
+                            <?php endforeach; ?>
                         </ol>
                     </div>
                 </div>
@@ -38,15 +34,20 @@
 
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button bg-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <button class="accordion-button bg-white collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                         Syarat Administrasi Tugas Akhir 2
                     </button>
                 </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <ol>
-                            <li>Mahasiswa tersebut terdaftar sebagai mahasiswa aktif</li>
-                            <li>Mahasiswa tersebut sudah menginput KRS Tugas Akhir 2</li>
+                            <?php foreach ($info_ta2 as $info): ?>
+                                <li>
+                                    <?php echo $info['syarat_admin_ta2']; ?>
+                                </li>
+                            <?php endforeach; ?>
                         </ol>
                     </div>
                 </div>
@@ -54,42 +55,40 @@
 
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button bg-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <button class="accordion-button bg-white collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                         Syarat Akademik Tugas Akhir 2
                     </button>
                 </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <ol>
-                            <li>Mahasiswa sudah menyelesaikan kuliah minimal 130 SKS</li>
-                            <li>Dalam daftar KHS tidak boleh ada nilai E</li>
-                            <li>IPK minimal 2.00</li>
-                            <li>Jumlah nilai D maksimal 10% dari jumlah mata kuliah yang telah diambil atau 4 mata kuliah</li>
+                            <?php foreach ($info_ta2 as $info): ?>
+                                <li>
+                                    <?php echo $info['syarat_akademik_ta2']; ?>
+                                </li>
+                            <?php endforeach; ?>
                         </ol>
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingFour">
-                    <button class="accordion-button bg-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                    <button class="accordion-button bg-white collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
                         Syarat Sidang Tugas Akhir 2
                     </button>
                 </h2>
-                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                    data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <ol>
-                            <li>Mahasiswa harus lulus mata kuliah Tugas Akhir 1 minimal dengan nilai C</li>
-                            <li>Bimbingan minimal TA 2 8 kali</li>
-                            <li>Menyerahkan dokumen laporan tugas akhir, sebanyak 4 eksemplar</li>
-                            <li>Tidak boleh ada nilai E</li>
-                            <li>IPK minimal 2.00</li>
-                            <li>Telah menyelesaikan kuliah minimal 140 SKS</li>
-                            <li>Jumlah nilai D maksimal 5% dari jumlah mata kuliah yang telah diambil atau 2 mata kuliah</li>
-                            <li>Skor TOEFL minimal 400</li>
-                            <li>Bebas beban administratif</li>
-                            <li>Sertifikat seminar nasional dan workshop masing-masing 1 buah</li>
-                            <li>Turnitin max 25%</li>
-                            <li>Pakaian yang digunakan saat Sidang TA 2, menggunakan baju putih berkerah,dasi,celana hitam, dan sepatu hitam serta jas almameter</li>
+                            <?php foreach ($info_ta2 as $info): ?>
+                                <li>
+                                    <?php echo $info['syarat_sidang_ta2']; ?>
+                                </li>
+                            <?php endforeach; ?>
                         </ol>
                     </div>
                 </div>
@@ -115,7 +114,7 @@
 
     // Loop melalui setiap tombol accordion dan tambahkan event listener
     accordionButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             // Dapatkan target collapse yang terkait dengan tombol ini
             const targetId = this.getAttribute('data-bs-target');
             const targetCollapse = document.querySelector(targetId);

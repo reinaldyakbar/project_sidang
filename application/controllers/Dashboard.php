@@ -21,9 +21,10 @@ class Dashboard extends CI_Controller
     }
     public function info_ta2()
     {
+        $data['info_ta2'] = $this->model_informasi->getInfoTA2();
         $this->load->view('layout/front-header');
         $this->load->view('layout/front-navbar');
-        $this->load->view('front-end/info_ta2');
+        $this->load->view('front-end/info_ta2', $data);
         $this->load->view('layout/front-footer');
     }
     public function dosbim()

@@ -3,7 +3,51 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Admin extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('model_auth');
+        $this->load->library('session');
+    }
+
     public function index()
+    {
+        // If the user is already logged in, redirect to the admin dashboard
+        if ($this->session->userdata('logged_in')) {
+            redirect('admin/dashboard');
+        } else {
+            $this->load->view('admin/login');
+        }
+    }
+
+    public function login()
+    {
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+
+        $user = $this->model_auth->get_user($username, $password);
+
+        if ($user) {
+            // Set user data in session
+            $user_data = array(
+                'id' => $user['id'],
+                'username' => $user['username'],
+                'logged_in' => true
+            );
+            $this->session->set_userdata($user_data);
+
+            redirect('admin/dashboard');
+        } else {
+            $this->load->view('admin/login');
+        }
+    }
+
+    public function logout()
+    {
+        $this->session->unset_userdata('logged_in');
+        redirect('admin/login');
+    }
+    public function dashboard()
     {
         $this->load->view('layout/header');
         $this->load->view('layout/sidebar');

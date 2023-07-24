@@ -65,32 +65,31 @@
     <div id="layoutSidenav_content">
         <div class="container">
             <h2>Input Form for Tugas Akhir</h2>
-            <form action="<?php echo base_url('informasi/submit_form'); ?>" method="post">
+            <form action="<?php echo base_url('informasi/submit_formTA2'); ?>" method="post">
                 <!-- Form input untuk Prosedur Tugas Akhir -->
                 <div class="section">
-                    <label for="prosedur_ta1">Prosedur Tugas Akhir 1:</label>
-                    <textarea id="prosedur_ta1" name="prosedur_ta1" rows="4" cols="50"></textarea>
+                    <label for="pola_bentuk_ta2">Pola dan Bentuk Tugas Akhir 2:</label>
+                    <textarea id="pola_bentuk_ta2" name="pola_bentuk_ta2" rows="4" cols="50"></textarea>
                 </div>
 
                 <!-- Form input untuk Syarat Administrasi Tugas Akhir -->
                 <div class="section">
 
-                    <label for="syarat_admin_ta1">Syarat Administrasi Tugas Akhir 1:</label>
-                    <textarea id="syarat_admin_ta1" name="syarat_admin_ta1" rows="4" cols="50"></textarea>
+                    <label for="syarat_admin_ta2">Syarat Administrasi Tugas Akhir 2:</label>
+                    <textarea id="syarat_admin_ta2" name="syarat_admin_ta2" rows="4" cols="50"></textarea>
                 </div>
 
                 <!-- Form input untuk Syarat Akademik Tugas Akhir -->
                 <div class="section">
-                    <label for="syarat_akademik_ta1">Syarat Akademik Tugas Akhir 1:</label>
-                    <textarea id="syarat_akademik_ta1" name="syarat_akademik_ta1" rows="4" cols="50"></textarea>
+                    <label for="syarat_akademik_ta2">Syarat Akademik Tugas Akhir 2:</label>
+                    <textarea id="syarat_akademik_ta2" name="syarat_akademik_ta2" rows="4" cols="50"></textarea>
                 </div>
 
                 <!-- Form input untuk Syarat Sidang Tugas Akhir -->
                 <div class="section">
-                    <label for="syarat_sidang_ta1">Syarat Sidang Tugas Akhir 1:</label>
-                    <textarea id="syarat_sidang_ta1" name="syarat_sidang_ta1" rows="4" cols="50"></textarea>
+                    <label for="syarat_sidang_ta2">Syarat Sidang Tugas Akhir 2:</label>
+                    <textarea id="syarat_sidang_ta2" name="syarat_sidang_ta2" rows="4" cols="50"></textarea>
                 </div>
-
                 <input type="submit" value="Submit">
             </form>
         </div>
