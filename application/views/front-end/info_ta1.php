@@ -10,15 +10,14 @@
         </div>
     </div>
     <div class="row d-flex justify-content-center">
-        <div class="col-lg-6 mx-4"
-            style="width: 500px; height: 350px; border-radius: 25px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);">
+        <div class="col-lg-6 mx-4" style="width: 500px; height: 350px; border-radius: 25px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);">
             <div class="text-center mt-5 mb-5">
-                <h5 class="display-7 fw-bolder mb-3 "><span class=" d-inline ">Prosedur Tugas Akhir 1</span></h5>
+                <h5 class="display-7 fw-bolder mb-3 "><span class=" d-inline ">Syarat Akademik Tugas Akhir 1</span></h5>
             </div>
             <div class="row">
                 <div class="col-lg-12 px-5">
                     <ol>
-                        <?php foreach ($info_ta1 as $info): ?>
+                        <?php foreach ($info_ta1 as $info) : ?>
                             <li>
                                 <?php echo $info['prosedur_ta1']; ?>
                             </li>
@@ -27,8 +26,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6 mx-4"
-            style="width: 500px; height: 350px; border-radius: 25px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);">
+        <div class="col-lg-6 mx-4" style="width: 500px; height: 350px; border-radius: 25px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);">
             <div class="text-center mt-5 mb-5">
                 <h5 class="display-7 fw-bolder mb-3 "><span class=" d-inline ">Syarat Administrasi Tugas Akhir 1</span>
                 </h5>
@@ -36,7 +34,7 @@
             <div class="row">
                 <div class="col-lg-12 px-5">
                     <ol>
-                        <?php foreach ($info_ta1 as $info): ?>
+                        <?php foreach ($info_ta1 as $info) : ?>
                             <li>
                                 <?php echo $info['syarat_admin_ta1']; ?>
                             </li>
@@ -50,16 +48,14 @@
         <div class="accordion" id="accordionExample" style="width: 1050px;">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button bg-white" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Syarat Akademik Tugas Akhir 1
+                    <button class="accordion-button bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Berkas Pendaftaran Sidang TA 1 Jalur Reguler
                     </button>
                 </h2>
-                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                    data-bs-parent="#accordionExample">
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <ol>
-                            <?php foreach ($info_ta1 as $info): ?>
+                            <?php foreach ($info_ta1 as $info) : ?>
                                 <li>
                                     <?php echo $info['syarat_akademik_ta1']; ?>
                                 </li>
@@ -70,16 +66,14 @@
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button bg-white collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Syarat Sidang Tugas Akhir 1
+                    <button class="accordion-button bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Berkas Pendaftaran Sidang TA 1 Jalur Publikasi
                     </button>
                 </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                    data-bs-parent="#accordionExample">
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <ol>
-                            <?php foreach ($info_ta1 as $info): ?>
+                            <?php foreach ($info_ta1 as $info) : ?>
                                 <li>
                                     <?php echo $info['syarat_sidang_ta1']; ?>
                                 </li>
