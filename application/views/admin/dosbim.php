@@ -56,9 +56,9 @@
                                     data-bs-target="#editDosenModal<?php echo $dsn->id; ?>"><i
                                         class="fas fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
                                 <!-- Tombol Hapus -->
-                                <a class="btn btn-danger btn-sm"
-                                    href="<?php echo base_url('admin/delete/' . $dsn->id); ?>"><i
-                                        class="fas fa-trash"></i></a>
+                                <button class="btn btn-danger btn-sm" onclick="konfirmasiHapus(<?php echo $dsn->id; ?>)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
 
                             </td>
                         </tr>
@@ -151,6 +151,25 @@
         </div>
     </div>
 </div>
+<!-- Modal Konfirmasi Hapus -->
+<div class="modal fade" id="konfirmasiHapusModal<?php echo $dsn->id; ?>" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Hapus</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Apakah Anda yakin ingin menghapus Dosen Pembimbing ini?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                <a class="btn btn-danger" href="#" onclick="hapusDosen(<?php echo $dsn->id; ?>)">Hapus</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
@@ -163,3 +182,14 @@
 </script>
 <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    function konfirmasiHapus(dosenId) {
+        const modal = new bootstrap.Modal(document.getElementById("konfirmasiHapusModal" + dosenId));
+        modal.show();
+    }
+
+    function hapusDosen(dosenId) {
+        // Lakukan penghapusan di sini, misalnya, arahkan ke endpoint penghapusan
+        window.location.href = "<?php echo base_url('admin/delete/') ?>" + dosenId;
+    }
+</script>
