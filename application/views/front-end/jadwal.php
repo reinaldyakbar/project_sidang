@@ -6,9 +6,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="text-center mb-5 mt-4">
-                    <h2 class="display-7 fw-bolder mb-5"><span class="text-gradient d-inline">Jadwal Sidang Tugas
+                    <h2 class="display-7 fw-bolder"><span class="text-gradient d-inline">Jadwal Sidang Tugas
                             Akhir</span></h2>
-                    <h3></h3>
+                    <h4 class="mb-5">Tahun Ajaran Semester Genap 2023/2024</h4>
                 </div>
             </div>
         </div>
