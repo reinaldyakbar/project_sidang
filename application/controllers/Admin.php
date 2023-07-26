@@ -49,9 +49,10 @@ class Admin extends CI_Controller
     }
     public function dashboard()
     {
+        $data['pengumuman'] = $this->model_pengumuman->getPengumuman();
         $this->load->view('layout/header');
         $this->load->view('layout/sidebar');
-        $this->load->view('admin/dashboard');
+        $this->load->view('admin/dashboard', $data);
         $this->load->view('layout/footer');
     }
     public function dosbim()
