@@ -13,7 +13,6 @@
             </div>
         </div>
     </section>
-
     <!--================Blog Area =================-->
     <section class="blog_area section-padding">
         <div class="container shadow">
