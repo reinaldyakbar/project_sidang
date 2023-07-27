@@ -50,6 +50,7 @@ class Admin extends CI_Controller
     public function dashboard()
     {
         $data['pengumuman'] = $this->model_pengumuman->getPengumuman();
+        $data['dosbim'] = $this->model_dosbim->getDosbim();
         $this->load->view('layout/header');
         $this->load->view('layout/sidebar');
         $this->load->view('admin/dashboard', $data);

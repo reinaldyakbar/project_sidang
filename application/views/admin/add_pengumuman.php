@@ -1,11 +1,6 @@
 <head>
     <title>Tambah Pengumuman</title>
     <style>
-        body {
-            background-color: #f2f2f2;
-            font-family: Arial, sans-serif;
-        }
-
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -46,6 +41,19 @@
             height: 100px;
         }
 
+        .input-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .input-group .input-group-text {
+            padding: 10px;
+            background-color: #ccc;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            color: #666;
+        }
+
         input[type="submit"] {
             display: block;
             width: 100%;
@@ -63,6 +71,7 @@
             background-color: #8A2BE2;
         }
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
 <div id="layoutSidenav_content">
@@ -75,10 +84,12 @@
 
             <label for="tanggal">Tanggal:</label>
             <div class="input-group">
-                <span class="input-group-text">
-                    <i class="fas fa-calendar-alt"></i>
-                </span>
-                <input type="text" id="tanggal" name="tanggal" class="form-control" required>
+                <label for="tanggal">
+                    <span class="input-group-text mt-2">
+                        <i class="fas fa-calendar"></i>
+                    </span>
+                </label>&nbsp;
+                <input type="text" id="tanggal" name="tanggal" class="form-control flatpickr" required>
             </div>
 
             <label for="koordinator">Koordinator:</label>
@@ -91,9 +102,7 @@
         </form>
     </div>
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
 <script>
     flatpickr('#tanggal', {
         dateFormat: 'd, F Y',
