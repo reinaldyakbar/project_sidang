@@ -56,6 +56,27 @@
                     <p>12 September 2022</p>
                 </div>
             </div>
+    </div>
+</div>
+<div class="container my-5">
+    <div class="card-info px-3 py-3 mb-3 " style="margin-top: 100px;">
+        <!-- Tautan ke halaman lain dengan menggunakan elemen <a> -->
+        <a href="halaman_pertama.html" style="text-decoration: none; color: inherit;">
+            <div class="row d-flex justify-content-between">
+                <div class="col-lg-9">
+                    <h4>Info Pemilihan Dosen Pembimbing TA TI S1 Ganjil 2022/2023</h4>
+                    <p>Diberitahukan kepada mahasiswa program studi TI S-1 yang mengambil Tugas Akhir yang belum
+                        memiliki Dosen Pembimbing TA dapat mengajukan permohonan Dosen Pembimbing melalui Sistem
+                        Pengajuan Dosen Pembimbing (SPDP) TA di alamat https://tatis1.dinus.web.id/...
+                    </p>
+                    <hr>
+                    <p>By : Koordinator TA TI S-1</p>
+                </div>
+
+                <div class="col-lg-2">
+                    <p>12 September 2022</p>
+                </div>
+            </div>
         </a>
     </div>
     <div class="card-info px-3 py-3 mb-3">
@@ -80,3 +101,4 @@
     </div>
     <!-- Tambahkan card-info lainnya dengan tautan ke halaman masing-masing -->
 </div>
+</section>
