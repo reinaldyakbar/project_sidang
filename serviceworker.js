@@ -61,3 +61,17 @@ self.addEventListener('activate', event => {
       })
   );
 });
+
+self.addEventListener('push', event => {
+  console.log('Service worker: Push received.');
+  const title = 'Notifikasi PWA';
+  const options = {
+    body: 'Ini adalah contoh notifikasi push pada PWA.',
+    icon: '/path/to/icon.png', // Ganti dengan URL icon notifikasi Anda
+    badge: '/path/to/badge.png', // Ganti dengan URL badge notifikasi Anda
+  };
+
+  event.waitUntil(
+    self.registration.showNotification(title, options)
+  );
+});

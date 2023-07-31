@@ -41,7 +41,8 @@
     <div class="row ">
         <div class="col-lg-12">
             <div class="text-center mb-5 mt-4">
-                <h2 class="display-7 fw-bolder mb-5 "><span class="text-gradient d-inline ">Pengumuman Tugas Akhir <br> Universitas Dian Nuswantoro</span></h2>
+                <h2 class="display-7 fw-bolder mb-5 "><span class="text-gradient d-inline ">Pengumuman Tugas Akhir <br>
+                        Universitas Dian Nuswantoro</span></h2>
             </div>
         </div>
     </div>
@@ -66,7 +67,28 @@
                 </div>
             </a>
         </div>
+        <div class="card-info px-3 py-3 mb-3">
+            <!-- Tautan ke halaman lain dengan menggunakan elemen <a> -->
+            <a href="halaman_pertama.html" style="text-decoration: none; color: inherit;">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-lg-9">
+                        <h4>Pengajuan Dosen Pembimbing TA/Skripsi TI S1 Semester Gasal 2021/2022</h4>
+                        <p>Diberitahukan kepada mahasiswa program studi Teknik Informatika S1 yang belum
+                            diplot/mendapatkan
+                            Dosen Pembimbing TA di siadin. Harap dapat mengajukan permohonannya melalui aplikasi web
+                            SPDP TA
+                            yang dapat...
+                        </p>
+                        <hr>
+                        <p>By : Koordinator TA TI S-1</p>
+                    </div>
 
+                    <div class="col-lg-2">
+                        <p>07 September 2022</p>
+                    </div>
+                </div>
+            </a>
+        </div>
         <!-- Tambahkan card-info lainnya dengan tautan ke halaman masing-masing -->
     </div>
 </section>

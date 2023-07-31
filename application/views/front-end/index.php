@@ -304,3 +304,15 @@
     </div>
 </section>
 <!-- pengumuman end -->
+
+<script>
+    // main.js atau index.js atau file JavaScript utama Anda
+
+    if ('Notification' in window && 'serviceWorker' in navigator) {
+        // Cek apakah Notifikasi didukung dan service worker tersedia di browser
+        Notification.requestPermission(status => {
+            console.log('Notifikasi izin status:', status);
+        });
+    }
+
+</script>

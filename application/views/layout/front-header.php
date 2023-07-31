@@ -17,6 +17,25 @@
                         console.error('Service Worker registration failed:', error);
                     });
             });
+            self.addEventListener('push', event => {
+                const data = event.data.json();
+                const options = {
+                    body: data.body,
+                    icon: '/path/to/icon.png',
+                    // Tambahkan opsi lainnya sesuai kebutuhan Anda
+                };
+
+                event.waitUntil(
+                    self.registration.showNotification(data.title, options)
+                );
+            });
+
+            self.addEventListener('notificationclick', event => {
+                event.notification.close();
+                // Tambahkan logika yang sesuai untuk menangani aksi ketika notifikasi diklik
+            });
+
+
         }
     </script>
     <link
