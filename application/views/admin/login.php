@@ -87,7 +87,9 @@
                     <div class="google-logo">
                         <img src="<?php echo base_url() ?>assets/img/logo.png" alt=" Google Logo">
                     </div>
-                    <h3 class="card-title text-center">Welcome TATIS Udinus</h3>
+                    <h3 class="card-title text-center">Media Informasi<br>
+                        <span>Tugas Akhir</span>
+                    </h3>
                     <form id="loginForm" action="<?php echo base_url('admin/login'); ?>" method="post">
                         <div class="form-group">
                             <label for="username">Username:</label>
