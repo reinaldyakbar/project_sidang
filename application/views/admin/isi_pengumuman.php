@@ -1,67 +1,74 @@
-<div id="layoutSidenav_content">
-    <section class="bg-white py-5" style="margin-top: 20px; margin-bottom: 8px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="text-center mt-4">
-                        <h2 class="display-7 fw-bolder mb-5">
-                            <span class="text-gradient d-inline">Pengumuman Tugas Akhir <br> Universitas Dian
-                                Nuswantoro</span>
-                        </h2>
-                    </div>
-                </div>
+<style>
+    .card-info {
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        border-radius: 15px;
+        transition: background-position 0.8s;
+        /* Transisi animasi warna ke kanan selama 0.8 detik */
+        position: relative;
+        /* Menambahkan posisi relatif untuk membuat z-index bekerja */
+        z-index: 1;
+        /* Menetapkan z-index agar linear gradient tampil di atas latar belakang putih */
+    }
+
+    .card-info:before {
+        content: "";
+        background-image: linear-gradient(to right, #FF4C91 20%, #fff 80%);
+        background-size: 200% 100%;
+        background-position: left bottom;
+        position: absolute;
+        border-radius: 15px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        /* Menempatkan latar belakang gradient di bawah latar belakang putih */
+        opacity: 0;
+        /* Mengatur opasitas menjadi 0 sehingga tidak terlihat saat tidak dihover */
+        transition: opacity 0.8s;
+        /* Transisi untuk opasitas saat dihover */
+    }
+
+    .card-info:hover:before {
+        opacity: 1;
+        border-radius: 15px;
+        /* Mengubah opasitas menjadi 1 saat dihover */
+    }
+</style>
+<div class="container my-5">
+    <div class="card px-4 py-5 mb-3" style="margin-top: 100px;">
+        <div class="row mb-5">
+            <div class="col-lg-12">
+                <h1>Info Pemilihan Dosen Pembimbing TA TI S-1 Ganjil 2022/2023</h1>
+                <p>12 September 2022</p>
             </div>
         </div>
-    </section>
-    <!--================Blog Area =================-->
-    <section class="blog_area section-padding">
-        <div class="container shadow">
-            <div class="row">
-                <div class="col-12 col-md-12 col-lg-12 posts-list">
-                    <div class="single-post">
-                        <div class="blog_details">
-                            <?php if (isset($pengumuman) && is_array($pengumuman)): ?>
-                                <?php foreach ($pengumuman as $png): ?>
-                                    <?php if ($png->id == $id_pengumuman): ?> <!-- Memeriksa ID pengumuman -->
-                                        <h1 class="mt-5">
-                                            <?php echo $png->judul; ?>
-                                        </h1>
-                                        <p class="blog-info-link mt-3 mb-4">
-                                            <i class="fa fa-time me-2"></i>
-                                            <?php echo date('d F Y', strtotime($png->tanggal)); ?> <!-- Menggunakan strtotime -->
-                                        </p>
-
-                                        <br><br>
-                                        <p class="text-justify">
-                                            <?php echo $png->isi_pengumuman; ?>
-                                        </p>
-                                        <p>
-                                            <br />
-                                            Hormat kami,<br />
-                                            Koordinator TA<br />
-                                            <br />
-                                            <?php echo $png->koordinator; ?>
-                                        </p>
-                                    <?php endif; ?>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p style="line-height: 2;">Diberitahukan kepada mahasiswa program studi TI S-1 yag mengambil Tugas Akhir
+                    yang belum memiliki Dosen Pembimbing TA dapat mengajukan permohonan Dosen Pembimbing melalui Sistem
+                    Pengajuan Dosen Pembimbing (SPDP) TA di alamat https://tatis1.dinus.web.id/.
+                    Silahkan buat account terlebih dahulu menggunakan email mahasiswa. <b> Pengajuan Dosen Pembimbing TA
+                        dimulai dari hari Senin, tanggal 12 s.d hari Kamis tanggal 14 September 2022 </b>. Lampirkan
+                    bukti permohonan berupa Surat Permohonan
+                    (format pdf) sebagai bukti keseriusan mengajukan permohonan ke dosbim yang dituju dan bukti
+                    pendukung screenshot percakapan sudah menghubungi dosbim yang dituju (jika ada, jika tidak ada dapat
+                    melampirkan surat permohonan). Sebelumnya
+                    kami telah melakukan rekap data terhadap surat permohonan yang dikirim melalui wa ke Koordinator 1
+                    maupun Koordinator 2 TA sampai dengan pengiriman hari Jumat, tanggal 9 September 2022. Adapun rekap
+                    surat permohonan yang telah dikirimkan
+                    tersebut dapat dilihat melalui https://bit.ly/cekPengajuan Demikian informasi ini disampaikan,
+                    diucapkan terima kasih.</p>
             </div>
         </div>
-    </section>
+        <div class="row">
+            <div class="col-lg-12">
+                <hr>
+                <p>Koordinator TA 1 TI S-1</p>
+            </div>
+        </div>
 
-
-
+    </div>
 </div>
-
-<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-<script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-    $(document).ready(function () {
-        new DataTable('#example');
-    });
-</script>
