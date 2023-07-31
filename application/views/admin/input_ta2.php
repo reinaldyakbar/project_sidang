@@ -9,7 +9,7 @@
     }
 
     .container {
-        max-width: 600px;
+        max-width: 900px;
         margin: 0 auto;
         background-color: #fff;
         border-radius: 8px;
@@ -64,31 +64,36 @@
 <body>
     <div id="layoutSidenav_content">
         <div class="container">
-            <h2>Input Form for Tugas Akhir</h2>
+            <h2>Form Tugas Akhir 2</h2>
             <form action="<?php echo base_url('informasi/submit_formTA2'); ?>" method="post">
-                <!-- Form input untuk Prosedur Tugas Akhir -->
                 <div class="section">
-                    <label for="pola_bentuk_ta2">Pola dan Bentuk Tugas Akhir 2:</label>
-                    <textarea id="pola_bentuk_ta2" name="pola_bentuk_ta2" rows="4" cols="50"></textarea>
+                    <label for="syarat_akademik_ta2">Syarat Akademik TA2:</label>
+                    <textarea name="syarat_akademik_ta2" id="syarat_akademik_ta2" required></textarea>
                 </div>
 
-                <!-- Form input untuk Syarat Administrasi Tugas Akhir -->
                 <div class="section">
-
-                    <label for="syarat_admin_ta2">Syarat Administrasi Tugas Akhir 2:</label>
-                    <textarea id="syarat_admin_ta2" name="syarat_admin_ta2" rows="4" cols="50"></textarea>
+                    <label for="syarat_admin_ta2">Syarat Admin TA2:</label>
+                    <textarea name="syarat_admin_ta2" id="syarat_admin_ta2" required></textarea>
                 </div>
 
-                <!-- Form input untuk Syarat Akademik Tugas Akhir -->
                 <div class="section">
-                    <label for="syarat_akademik_ta2">Syarat Akademik Tugas Akhir 2:</label>
-                    <textarea id="syarat_akademik_ta2" name="syarat_akademik_ta2" rows="4" cols="50"></textarea>
+                    <label for="berkas_ta2_reguler">Berkas TA2 Reguler:</label>
+                    <textarea name="berkas_ta2_reguler" id="berkas_ta2_reguler" required></textarea>
                 </div>
 
-                <!-- Form input untuk Syarat Sidang Tugas Akhir -->
                 <div class="section">
-                    <label for="syarat_sidang_ta2">Syarat Sidang Tugas Akhir 2:</label>
-                    <textarea id="syarat_sidang_ta2" name="syarat_sidang_ta2" rows="4" cols="50"></textarea>
+                    <label for="berkas_ta2_publikasi">Berkas TA2 Publikasi:</label>
+                    <textarea name="berkas_ta2_publikasi" id="berkas_ta2_publikasi" required></textarea>
+                </div>
+
+                <div class="section">
+                    <label for="pasca_reguler">Pasca Reguler:</label>
+                    <textarea name="pasca_reguler" id="pasca_reguler" required></textarea>
+                </div>
+
+                <div class="section">
+                    <label for="pasca_publikasi">Pasca Publikasi:</label>
+                    <textarea name="pasca_publikasi" id="pasca_publikasi" required></textarea>
                 </div>
                 <input type="submit" value="Submit">
             </form>

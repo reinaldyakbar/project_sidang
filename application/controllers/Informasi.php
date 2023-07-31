@@ -52,10 +52,12 @@ class Informasi extends CI_Controller
     {
         if ($this->input->post()) {
             $data = array(
-                'pola_bentuk_ta2' => $this->input->post('pola_bentuk_ta2'),
-                'syarat_admin_ta2' => $this->input->post('syarat_admin_ta2'),
                 'syarat_akademik_ta2' => $this->input->post('syarat_akademik_ta2'),
-                'syarat_sidang_ta2' => $this->input->post('syarat_sidang_ta2')
+                'syarat_admin_ta2' => $this->input->post('syarat_admin_ta2'),
+                'berkas_ta2_reguler' => $this->input->post('berkas_ta2_reguler'),
+                'berkas_ta2_publikasi' => $this->input->post('berkas_ta2_publikasi'),
+                'pasca_reguler' => $this->input->post('pasca_reguler'),
+                'pasca_publikasi' => $this->input->post('pasca_publikasi')
             );
 
             // You can add validation rules here if required
@@ -69,4 +71,5 @@ class Informasi extends CI_Controller
             }
         }
     }
+
 }
