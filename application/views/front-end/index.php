@@ -161,7 +161,7 @@
                             foreach ($dosbim as $dsn) : ?>
                                 <?php if ($count < 5) : ?>
                                     <div class="col-lg-2 col-md-6 col-sm-4 mb-3 " data-aos="fade-up" data-aos-duration="2000">
-                                        <div class="card rounded-5 border-0">
+                                        <div class="card rounded-5 border-0" style="width: 170px; height: 270px">
                                             <img src="<?php echo base_url('uploads/' . $dsn->gambar); ?>" class="card-img-top card2" alt="Profile Picture 1" style="border-radius: 35px;">
                                             <div class="card-body ">
                                                 <h5 class="card-title small">
