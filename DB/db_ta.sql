@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 06, 2023 at 01:30 PM
+-- Generation Time: Aug 06, 2023 at 04:26 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -59,10 +59,17 @@ CREATE TABLE `tb_dosbim` (
 --
 
 INSERT INTO `tb_dosbim` (`id`, `npp`, `nama`, `bidang`, `gambar`) VALUES
-(3, '0686.11.2013.536', 'Defri Kurniawan, M.Kom', 'RPLD', 'profil16.svg'),
-(19, '0686.11.2013.536', 'fikri', 'RPLD', 'Dr_HERIBERTUS_HIMAWAN_S_Kom_M_Kom_0686_11_19961.jpg'),
-(20, '0686.11.2013.532', 'fikri2', 'SC', 'DR_SOLICHUL_HUDA_M_Kom_0686_11_1997_1301.jpg'),
-(21, '12313', 'pppppp', 'SC', 'T_SUTOJO_S_Si_M_Kom_0686_11_1996_0941.jpg');
+(23, '0686.11.1996.101', 'Dr. AHMAD ZAINUL FANANI, SSi, M.Kom', 'SC', 'Dr_AHMAD_ZAINUL_FANANI_SSi_M_Kom_0686_11_1996.jpg'),
+(24, '0686.11.1996.106', 'Dr. BUDI HARJO M.Kom', 'RPLD', 'Dr_BUDI_HARJO_M_Kom_0686_11_1996.jpg'),
+(25, '0686.11.1996.103', 'Dr. HERIBERTUS HIMAWAN, M.Kom', 'RPLD', 'Dr_HERIBERTUS_HIMAWAN_S_Kom_M_Kom_0686_11_19963.jpg'),
+(26, '0686.11.1996.104', 'Dr. MULJONO, S.Si, M.Kom', 'SC', 'Dr_MULJONO_S_Si_M_Kom_0686_11_1996_1.jpg'),
+(27, '0686.11.1997.130', 'DR SOLICHUL HUDA, M.Kom', 'SKKKD', 'DR_SOLICHUL_HUDA_M_Kom_0686_11_1997.jpg'),
+(28, '0686.11.1997.132', 'ERNA ZUNI ASTUTI, M.Kom', 'SC', 'ERNA_ZUNI_ASTUTI_M_Kom_0686_11_1997.jpg'),
+(29, '0686.11.1996.097', 'HERU LESTIAWAN, M.Kom', 'RPLD', 'HERU_LESTIAWAN_M_Kom_0686_11_1996.jpg'),
+(30, '0686.11.1997.125', 'NOOR AGENG SETIYANTO, M.Kom', 'RPLD', 'NOOR_AGENG_SETIYANTO_M_Kom_0686_11_1997.jpg'),
+(31, '0686.11.1996.094', 'T. SUTOJO, S.Si, M.Kom', 'SC', 'T_SUTOJO_S_Si_M_Kom_0686_11_1996.jpg'),
+(32, '0686.11.1996.100', 'USMAN SUDIBYO, SSi.,M.KOM', 'SC', 'USMAN_SUDIBYO_SSi_M_KOM_0686_11_1996.jpg'),
+(33, '0686.11.2013.536', 'DEFRI KURNIAWAN, M.Kom', 'RPLD', 'Defri_kurniawan.jpg');
 
 -- --------------------------------------------------------
 
@@ -232,7 +239,7 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT for table `tb_dosbim`
 --
 ALTER TABLE `tb_dosbim`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `tb_informasi_ta1`
