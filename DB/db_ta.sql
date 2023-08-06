@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 06, 2023 at 01:16 PM
+-- Generation Time: Aug 06, 2023 at 01:30 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -59,7 +59,10 @@ CREATE TABLE `tb_dosbim` (
 --
 
 INSERT INTO `tb_dosbim` (`id`, `npp`, `nama`, `bidang`, `gambar`) VALUES
-(3, '0686.11.2013.536', 'Defri Kurniawan, M.Kom', 'RPLD', 'profil16.svg');
+(3, '0686.11.2013.536', 'Defri Kurniawan, M.Kom', 'RPLD', 'profil16.svg'),
+(19, '0686.11.2013.536', 'fikri', 'RPLD', 'Dr_HERIBERTUS_HIMAWAN_S_Kom_M_Kom_0686_11_19961.jpg'),
+(20, '0686.11.2013.532', 'fikri2', 'SC', 'DR_SOLICHUL_HUDA_M_Kom_0686_11_1997_1301.jpg'),
+(21, '12313', 'pppppp', 'SC', 'T_SUTOJO_S_Si_M_Kom_0686_11_1996_0941.jpg');
 
 -- --------------------------------------------------------
 
@@ -229,7 +232,7 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT for table `tb_dosbim`
 --
 ALTER TABLE `tb_dosbim`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `tb_informasi_ta1`
