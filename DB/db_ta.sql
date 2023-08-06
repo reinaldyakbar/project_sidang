@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Jul 2023 pada 08.34
--- Versi server: 10.4.27-MariaDB
--- Versi PHP: 7.4.33
+-- Generation Time: Aug 06, 2023 at 01:16 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_admin`
+-- Table structure for table `tb_admin`
 --
 
 CREATE TABLE `tb_admin` (
@@ -34,7 +34,7 @@ CREATE TABLE `tb_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_admin`
+-- Dumping data for table `tb_admin`
 --
 
 INSERT INTO `tb_admin` (`id`, `username`, `password`) VALUES
@@ -43,7 +43,7 @@ INSERT INTO `tb_admin` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_dosbim`
+-- Table structure for table `tb_dosbim`
 --
 
 CREATE TABLE `tb_dosbim` (
@@ -55,7 +55,7 @@ CREATE TABLE `tb_dosbim` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_dosbim`
+-- Dumping data for table `tb_dosbim`
 --
 
 INSERT INTO `tb_dosbim` (`id`, `npp`, `nama`, `bidang`, `gambar`) VALUES
@@ -64,7 +64,7 @@ INSERT INTO `tb_dosbim` (`id`, `npp`, `nama`, `bidang`, `gambar`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_informasi_ta1`
+-- Table structure for table `tb_informasi_ta1`
 --
 
 CREATE TABLE `tb_informasi_ta1` (
@@ -76,17 +76,20 @@ CREATE TABLE `tb_informasi_ta1` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_informasi_ta1`
+-- Dumping data for table `tb_informasi_ta1`
 --
 
 INSERT INTO `tb_informasi_ta1` (`id`, `prosedur_ta1`, `syarat_admin_ta1`, `syarat_akademik_ta1`, `syarat_sidang_ta1`) VALUES
-(7, 'Pengarahan TA 1', 'Mahasiswa terdaftar sebagai mahasiswa aktif', 'Mahasiswa sudah menyelesaikan kuliah minimal 120 SKS', 'Memenuhi syarat administrasi dan akademik TA 1'),
-(11, 'aaa', 'a', 'a', 'a');
+(12, 'Mahasiswa sudah menyelesaikan minimal 120 SKS', 'Mahasiswa tersebut terdaftar sebagai mahasiswa aktif', 'Mengirimkan Laporan Tugas Akhir-1 dengan menyertakan Halaman Sampul, Bab I, II, III dan Daftar Pustaka', 'Mengirimkan bukti pubikasi pada Jurnal Nasional Terakreditasi Sinta 3 atau Internasional\r\nConference berupa file jurnal atau prosiding, link publikasi (apabila Jurnal atau Prosiding belum\r\npublish, maka dapat mengirimkan lembar bukti penerimaan (letter of acceptance), '),
+(13, 'Mahasiswa lulus mata kuliah Metodologi Penelitian dengan nilai minimal C', 'Mahasiswa tersebut sudah menginput KRS Tugas Akhir I', 'Mengisi Log Bimbingan (Google Spreadsheet) minimal 3x bimbingan dan telah telah disetujui\r\n(tercentang pada kolom Checklist)', 'Bukti revisi yang dikerjakan Jurnal atau Prosiding wajib ditunjukkan'),
+(14, 'Dalam daftar KHS tidak boleh ada nilai E', '', 'Lembar Persetujuan Tugas Akhir 1 (download dari siadin) yang ditandatangani oleh Dosen\r\nPembimbing (ttd basah / ttd digital) sebagai bukti persetujuan dari Dosen Pembimbing untuk\r\nmendaftar Sidang TA-1', 'Mengisi Log Bimbingan (Google Spreadsheet) minimal 3x bimbingan dan telah disetujui\r\n(tercentang pada kolom Checklist)'),
+(15, 'IPK minimal 2.00', '', 'Mahasiswa peserta sidang regular wajib mendaftar Ujian TA-1 di Siadin dan wajib datang saat Ujian TA-1 sesuai jadwal', 'Lembar Persetujuan Tugas Akhir 1 (download dari siadin) yang ditandatangani oleh Dosen Pembimbing (ttd basah / ttd digital) sebagai bukti persetujuan dari Dosen Pembimbing untuk mendaftar Sidang TA-1'),
+(16, '', '', '', 'Mahasiswa peserta sidang jalur Karya Ilmiah tidak perlu datang saat Ujian TA-1');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_informasi_ta2`
+-- Table structure for table `tb_informasi_ta2`
 --
 
 CREATE TABLE `tb_informasi_ta2` (
@@ -100,7 +103,7 @@ CREATE TABLE `tb_informasi_ta2` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_jadwal_ta1`
+-- Table structure for table `tb_jadwal_ta1`
 --
 
 CREATE TABLE `tb_jadwal_ta1` (
@@ -111,7 +114,7 @@ CREATE TABLE `tb_jadwal_ta1` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_jadwal_ta1`
+-- Dumping data for table `tb_jadwal_ta1`
 --
 
 INSERT INTO `tb_jadwal_ta1` (`id`, `gelombang`, `pendaftaran`, `estimasi_sidang`) VALUES
@@ -123,7 +126,7 @@ INSERT INTO `tb_jadwal_ta1` (`id`, `gelombang`, `pendaftaran`, `estimasi_sidang`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_jadwal_ta2`
+-- Table structure for table `tb_jadwal_ta2`
 --
 
 CREATE TABLE `tb_jadwal_ta2` (
@@ -135,7 +138,7 @@ CREATE TABLE `tb_jadwal_ta2` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_jadwal_ta2`
+-- Dumping data for table `tb_jadwal_ta2`
 --
 
 INSERT INTO `tb_jadwal_ta2` (`id`, `gelombang`, `pendaftaran`, `waktu_sidang`, `keterangan`) VALUES
@@ -147,7 +150,7 @@ INSERT INTO `tb_jadwal_ta2` (`id`, `gelombang`, `pendaftaran`, `waktu_sidang`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pengumuman`
+-- Table structure for table `tb_pengumuman`
 --
 
 CREATE TABLE `tb_pengumuman` (
@@ -159,7 +162,7 @@ CREATE TABLE `tb_pengumuman` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_pengumuman`
+-- Dumping data for table `tb_pengumuman`
 --
 
 INSERT INTO `tb_pengumuman` (`id`, `judul`, `isi_pengumuman`, `koordinator`, `tanggal`) VALUES
@@ -171,89 +174,89 @@ INSERT INTO `tb_pengumuman` (`id`, `judul`, `isi_pengumuman`, `koordinator`, `ta
 --
 
 --
--- Indeks untuk tabel `tb_admin`
+-- Indexes for table `tb_admin`
 --
 ALTER TABLE `tb_admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_dosbim`
+-- Indexes for table `tb_dosbim`
 --
 ALTER TABLE `tb_dosbim`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_informasi_ta1`
+-- Indexes for table `tb_informasi_ta1`
 --
 ALTER TABLE `tb_informasi_ta1`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_informasi_ta2`
+-- Indexes for table `tb_informasi_ta2`
 --
 ALTER TABLE `tb_informasi_ta2`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_jadwal_ta1`
+-- Indexes for table `tb_jadwal_ta1`
 --
 ALTER TABLE `tb_jadwal_ta1`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_jadwal_ta2`
+-- Indexes for table `tb_jadwal_ta2`
 --
 ALTER TABLE `tb_jadwal_ta2`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_pengumuman`
+-- Indexes for table `tb_pengumuman`
 --
 ALTER TABLE `tb_pengumuman`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tb_admin`
+-- AUTO_INCREMENT for table `tb_admin`
 --
 ALTER TABLE `tb_admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_dosbim`
+-- AUTO_INCREMENT for table `tb_dosbim`
 --
 ALTER TABLE `tb_dosbim`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_informasi_ta1`
+-- AUTO_INCREMENT for table `tb_informasi_ta1`
 --
 ALTER TABLE `tb_informasi_ta1`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_informasi_ta2`
+-- AUTO_INCREMENT for table `tb_informasi_ta2`
 --
 ALTER TABLE `tb_informasi_ta2`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_jadwal_ta1`
+-- AUTO_INCREMENT for table `tb_jadwal_ta1`
 --
 ALTER TABLE `tb_jadwal_ta1`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_jadwal_ta2`
+-- AUTO_INCREMENT for table `tb_jadwal_ta2`
 --
 ALTER TABLE `tb_jadwal_ta2`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pengumuman`
+-- AUTO_INCREMENT for table `tb_pengumuman`
 --
 ALTER TABLE `tb_pengumuman`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
