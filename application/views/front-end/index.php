@@ -65,17 +65,15 @@
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4">
                 <div class="services__content" data-aos="fade-right" data-aos-duration="1000">
                     <div class="icon d-block fas fa-paper-plane"></div>
-                    <h3 class="display-3--title mt-1 txt-gradient">Gedung H Fakultas Ilmu Komputer</h3>
+                    <h3 class="display-3--title mt-1 txt-gradient">Tugas Akhir </h3>
                     <p class="lh-lg">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, impedit rem, doloremque
-                        autem quibusdam blanditiis harum alias hic accusantium maxime atque ratione magni
-                        repellat?
+                        Tugas Akhir adalah proyek penelitian dan pengembangan yang dijalankan oleh mahasiswa sebagai tahap akhir studi. Fokusnya pada pemecahan masalah teknologi melalui penggunaan konsep, algoritma, dan pemrograman. Tujuannya menguji pemahaman mahasiswa tentang aplikasi praktis teori dan menciptakan solusi inovatif dalam bidang komputer.
                     </p>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-end" data-aos="fade-left" data-aos-duration="1000">
                 <div>
-                    <img src="<?php echo base_url() ?>assets/front-end/assets/images/dinus600.jpg" alt="..." class="h-75 w-75">
+                    <img src="<?php echo base_url() ?>assets/front-end/assets/images/p2.svg" alt="..." class="h-75 w-75">
                 </div>
             </div>
         </div>
@@ -106,17 +104,15 @@
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4">
                 <div class="services__content" data-aos="fade-right" data-aos-duration="1000">
                     <div class="icon d-block fas fa-cloud-upload-alt"></div>
-                    <h3 class="display-3--title mt-1 txt-gradient">Tugas Akhir</h3>
+                    <h3 class="display-3--title mt-1 txt-gradient">Gedung H Fakultas Ilmu Komputer</h3>
                     <p class="lh-lg">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, impedit rem, doloremque
-                        autem quibusdam blanditiis harum alias hic accusantium maxime atque ratione magni
-                        repellat?
+                        Ruang Koordinator Tugas Akhir Program Studi Teknik Informatika berada di gedung H Fakultas Ilmu Komputer yang berada di ruang H.2.1
                     </p>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-end" data-aos="fade-left" data-aos-duration="1000">
                 <div>
-                    <img src="<?php echo base_url() ?>assets/front-end/assets/images/p2.svg" alt="..." class="h-75 w-75">
+                    <img src="<?php echo base_url() ?>assets/front-end/assets/images/dinus600.jpg" alt="..." class="h-75 w-75">
                 </div>
             </div>
         </div>
