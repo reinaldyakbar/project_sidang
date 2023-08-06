@@ -49,7 +49,7 @@
     <div class="container my-5">
         <div class="card-info px-3 py-3 mb-3 " style="margin-top: 100px;">
             <!-- Tautan ke halaman lain dengan menggunakan elemen <a> -->
-            <a href="halaman_pertama.html" style="text-decoration: none; color: inherit;">
+            <a href="<?php echo base_url('dashboard/isi_pengumuman') ?>" style="text-decoration: none; color: inherit;">
                 <div class="row d-flex justify-content-between">
                     <div class="col-lg-9">
                         <h4>Info Pemilihan Dosen Pembimbing TA TI S1 Ganjil 2022/2023</h4>
@@ -69,7 +69,7 @@
         </div>
         <div class="card-info px-3 py-3 mb-3">
             <!-- Tautan ke halaman lain dengan menggunakan elemen <a> -->
-            <a href="halaman_pertama.html" style="text-decoration: none; color: inherit;">
+            <a href="<?php echo base_url('dashboard/isi_pengumuman') ?>" style="text-decoration: none; color: inherit;">
                 <div class="row d-flex justify-content-between">
                     <div class="col-lg-9">
                         <h4>Pengajuan Dosen Pembimbing TA/Skripsi TI S1 Semester Gasal 2021/2022</h4>
