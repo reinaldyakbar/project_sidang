@@ -101,7 +101,9 @@ class Admin extends CI_Controller
         $npp = $this->input->post('npp');
         $bidang = $this->input->post('bidang');
         $gambar = $_FILES['gambar']['name'];
-        if ($gambar = '') {
+
+        if ($gambar == '') { // Gunakan operator perbandingan '==' bukan operator penugasan '='
+            // Jika $gambar kosong, tidak ada perubahan gambar
         } else {
             $config['upload_path'] = './uploads';
             $config['allowed_types'] = 'jpg|jpeg|png|svg';
@@ -113,6 +115,7 @@ class Admin extends CI_Controller
                 $gambar = $this->upload->data('file_name');
             }
         }
+
         $data = array(
             'nama' => $nama,
             'npp' => $npp,
@@ -125,8 +128,11 @@ class Admin extends CI_Controller
         );
 
         $this->model_dosbim->update($where, $data, 'tb_dosbim');
+
+        $this->session->set_flashdata('success', 'Data berhasil diubah');
         redirect('admin/dosbim');
     }
+
     public function edit($id)
     {
         $where = array('id' => $id);

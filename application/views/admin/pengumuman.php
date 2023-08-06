@@ -1,68 +1,136 @@
+<head>
+    <!-- Other meta tags and CSS links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
 <style>
     .card-info {
-        background-color: #fff;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         padding: 20px;
         border-radius: 15px;
         transition: background-position 0.8s;
         /* Transisi animasi warna ke kanan selama 0.8 detik */
-        position: relative;
-        /* Menambahkan posisi relatif untuk membuat z-index bekerja */
-        z-index: 1;
-        /* Menetapkan z-index agar linear gradient tampil di atas latar belakang putih */
     }
 
-    .card-info:before {
-        content: "";
-        background-image: linear-gradient(to right, #FF4C91 20%, #fff 80%);
-        background-size: 200% 100%;
-        background-position: left bottom;
-        position: absolute;
-        border-radius: 15px;
-        top: 0;
-        left: 0;
+    .card-info table {
         width: 100%;
-        height: 100%;
-        z-index: -1;
-        /* Menempatkan latar belakang gradient di bawah latar belakang putih */
-        opacity: 0;
-        /* Mengatur opasitas menjadi 0 sehingga tidak terlihat saat tidak dihover */
-        transition: opacity 0.8s;
-        /* Transisi untuk opasitas saat dihover */
+        border-collapse: collapse;
     }
 
-    .card-info:hover:before {
-        opacity: 1;
-        border-radius: 15px;
-        /* Mengubah opasitas menjadi 1 saat dihover */
+    .card-info th,
+    .card-info td {
+        border: 2px solid black;
+        padding: 8px;
+    }
+
+    .btn-edit,
+    .btn-delete,
+    .btn-add {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 14px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        margin-right: 6px;
+        cursor: pointer;
+    }
+
+    .btn-edit {
+        background-color: #007bff;
+    }
+
+    .btn-delete {
+        background-color: #dc3545;
+    }
+
+    .btn-add {
+        background-color: #28a745;
+    }
+
+    .btn-edit:hover,
+    .btn-delete:hover,
+    .btn-add:hover {
+        opacity: 0.85;
+    }
+
+    /* Efek warna ketika kursor diarahkan ke tombol */
+    .btn-edit:hover {
+        background-color: #0056b3;
+    }
+
+    .btn-delete:hover {
+        background-color: #c82333;
+    }
+
+    .btn-add:hover {
+        background-color: #218838;
+    }
+
+    .btn-icon {
+        margin-right: 6px;
     }
 </style>
+
 <div id="layoutSidenav_content">
     <div class="container my-5">
-        <div class="float-end">
-            <a href="<?php echo base_url('pengumuman/add_pengumuman') ?>" class="btn btn-primary">Tambah
-                Pengumuman</a>
+        <div class="text-center mb-3 mt-1">
+            <h2 class="display-7 fw-bolder mb-5">Pengumuman Tugas Akhir Universitas Dian Nuswantoro</h2>
         </div>
-        <div class="card-info px-3 py-3 mb-3 " style="margin-top: 70px;">
-            <!-- Tautan ke halaman lain dengan menggunakan elemen <a> -->
-            <a href="<?php echo base_url('pengumuman/isi_pengumuman') ?>"
-                style="text-decoration: none; color: inherit;">
-                <div class="row d-flex justify-content-between">
-                    <div class="col-lg-9">
-                        <h4>Info Pemilihan Dosen Pembimbing TA TI S1 Ganjil 2022/2023</h4>
-                        <p>Diberitahukan kepada mahasiswa program studi TI S-1 yang mengambil Tugas Akhir yang belum
-                            memiliki Dosen Pembimbing TA dapat mengajukan permohonan Dosen Pembimbing melalui Sistem
-                            Pengajuan Dosen Pembimbing (SPDP) TA di alamat https://tatis1.dinus.web.id/...
-                        </p>
-                        <hr>
-                        <p>By : Koordinator TA TI S-1</p>
-                    </div>
-
-                    <div class="col-lg-2">
-                        <p>12 September 2022</p>
-                    </div>
-                </div>
+        <div class="d-flex justify-content-end mb-3">
+            <!-- Add Announcement Button -->
+            <a href="<?php echo base_url('pengumuman/tambah_pengumuman') ?>" class="btn btn-add">
+                <i class="fas fa-plus btn-icon"></i> Tambah Pengumuman
             </a>
+        </div>
+        <?php
+        $pengumuman_array = json_decode(json_encode($pengumuman), true);
+        ?>
+        <div class="card-info px-3 py-3 mb-3 text-center">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Judul</th>
+                        <th>Tanggal</th>
+                        <th>Koordinator TA</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $no_urut = 1; ?>
+                    <?php foreach ($pengumuman_array as $png) { ?>
+                        <tr>
+                            <td>
+                                <?php echo $no_urut; ?>
+                            </td>
+                            <td>
+                                <?php echo $png['judul']; ?>
+                            </td>
+                            <td>
+                                <?php
+                                $formatted_date = date('j F Y', strtotime(str_replace(array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'), array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'), $png['tanggal'])));
+                                echo $formatted_date;
+                                ?>
+                            </td>
+                            <td>
+                                <?php echo $png['koordinator']; ?>
+                            </td>
+                            <td>
+                                <!-- Delete Button -->
+                                <a href="<?php echo base_url('pengumuman/delete_pengumuman') ?>" class="btn btn-delete">
+                                    <i class="fas fa-trash-alt btn-icon"></i> Hapus
+                                </a>
+                            </td>
+                        </tr>
+                        <?php $no_urut++; ?>
+                    <?php } ?>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

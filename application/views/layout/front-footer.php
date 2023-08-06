@@ -71,39 +71,6 @@
     }
 
 </script>
-<script>
-    import firebase from 'firebase/app';
-    import 'firebase/messaging';
-
-    const firebaseConfig = {
-        apiKey: 'YOUR_API_KEY',
-        authDomain: 'YOUR_AUTH_DOMAIN',
-        projectId: 'YOUR_PROJECT_ID',
-        storageBucket: 'YOUR_STORAGE_BUCKET',
-        messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
-        appId: 'YOUR_APP_ID'
-    };
-
-    firebase.initializeApp(firebaseConfig);
-
-    // Dapatkan instance dari messaging service
-    const messaging = firebase.messaging();
-
-    // Lakukan permintaan untuk mendapatkan token perangkat
-    messaging.requestPermission()
-        .then(() => {
-            console.log('Notifikasi izin diberikan.');
-            return messaging.getToken();
-        })
-        .then(token => {
-            console.log('Token perangkat:', token);
-            // Kirimkan token ini ke server Anda untuk mengidentifikasi perangkat dan mengirim notifikasi
-        })
-        .catch(error => {
-            console.error('Permintaan izin gagal:', error);
-        });
-
-</script>
 </body>
 
 </html>

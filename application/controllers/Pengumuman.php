@@ -13,66 +13,39 @@ class Pengumuman extends CI_Controller
     }
     public function add_pengumuman()
     {
-        $id = $this->input->post('id'); // Ambil nilai id dari input form
-        $judul = $this->input->post('judul');
-        $isi_pengumuman = $this->input->post('isi_pengumuman');
-        $koordinator = $this->input->post('koordinator');
-        $tanggal = date('d, F Y', strtotime($this->input->post('tanggal'))); // Ubah format tanggal menjadi "12, September 2023"
+        $this->load->library('form_validation');
 
-        $data = array(
-            'id' => $id,
-            'judul' => $judul,
-            'isi_pengumuman' => $isi_pengumuman,
-            'koordinator' => $koordinator,
-            'tanggal' => $tanggal
-        );
+        // Set rules for form validation
+        $this->form_validation->set_rules('judul', 'Judul', 'required');
+        $this->form_validation->set_rules('koordinator', 'Koordinator', 'required');
+        $this->form_validation->set_rules('isi_pengumuman', 'Isi Pengumuman', 'required');
+        $this->form_validation->set_rules('tanggal', 'Tanggal', 'required');
 
-        $where = array(
-            'id' => $id
-        );
+        if ($this->form_validation->run() === FALSE) {
+            // Form validation failed, show the form again with validation errors
+            $this->load->view('pengumuman/tambah_pengumuman');
+        } else {
+            // Form validation passed, process the form data
+            $judul = $this->input->post('judul');
+            $isi_pengumuman = $this->input->post('isi_pengumuman');
+            $koordinator = $this->input->post('koordinator');
+            $tanggal = $this->input->post('tanggal');
 
+            // Format the date to "17 Agustus 2023" before inserting into the database
+            $formatted_date = date('d F Y', strtotime(str_replace(',', '', $tanggal)));
 
-        $this->model_pengumuman->insert($data, 'tb_pengumuman');
-        $_SESSION["sukses"] = 'pengumuman berhasil ditambahkan';
-        redirect('pengumuman/index');
-    }
+            $data = array(
+                'judul' => $judul,
+                'isi_pengumuman' => $isi_pengumuman,
+                'koordinator' => $koordinator,
+                'tanggal' => $formatted_date
+            );
 
-    public function update_pengumuman()
-    {
-        $id = $this->input->post('id'); // Ambil nilai id dari input form
-        $judul = $this->input->post('judul');
-        $isi_pengumuman = $this->input->post('isi_pengumuman');
-        $koordinator = $this->input->post('koordinator');
-        $tanggal = date('d, F Y', strtotime($this->input->post('tanggal'))); // Ubah format tanggal menjadi "12, September 2023"
-
-        $data = array(
-            'id' => $id,
-            'judul' => $judul,
-            'isi_pengumuman' => $isi_pengumuman,
-            'koordinator' => $koordinator,
-            'tanggal' => $tanggal
-        );
-
-        $where = array(
-            'id' => $id
-        );
-
-        $where = array(
-            'id' => $id
-        );
-
-        $this->model_pengumuman->update($where, $data, 'tb_pengumuman');
-        redirect('pengumuman/index');
-    }
-
-    public function edit_pengumuman($id)
-    {
-        $where = array('id' => $id);
-        $data['pengumuman'] = $this->model_pengumuman->edit($where, 'tb_pengumuman')->result();
-        $this->load->view('layout/header');
-        $this->load->view('layout/sidebar');
-        $this->load->view('admin/pengumuman', $data);
-        $this->load->view('layout/footer');
+            // Assuming that $this->model_pengumuman->insert() is a method in your model to insert data into the database
+            $this->model_pengumuman->insert($data, 'tb_pengumuman');
+            $_SESSION["sukses"] = 'pengumuman berhasil ditambahkan';
+            redirect('pengumuman/index');
+        }
     }
     public function delete_pengumuman($id)
     {

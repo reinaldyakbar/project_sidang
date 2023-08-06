@@ -73,7 +73,7 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <form id="editDosenForm" action="<?php echo base_url('admin/update'); ?>"
+                                        <form id="editDosenForm" action="<?php echo base_url() . 'admin/update'; ?>"
                                             method="post" enctype="multipart/form-data">
                                             <div class="mb-3">
                                                 <label for="nama" class="form-label">Nama</label>
