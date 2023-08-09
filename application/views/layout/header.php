@@ -19,10 +19,10 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/assets/style/style.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/assets/style/responsive.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/front-end/assets/style/lightbox.css">
+    <link rel="manifest" href="/path/to/manifest.json">
     <!-- DOSBIM -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css
-    ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css">
     <script>
         if ('serviceWorker' in navigator) {
