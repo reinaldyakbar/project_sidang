@@ -142,12 +142,27 @@ class Admin extends CI_Controller
         $this->load->view('admin/dosbim', $data);
         $this->load->view('layout/footer');
     }
+
     public function delete($id)
     {
+        // Check if the ID is provided and is numeric
+        if (!is_numeric($id)) {
+            show_error('Invalid ID');
+            return;
+        }
+
+        // Create the where condition
         $where = array('id' => $id);
-        $this->model_dosbim->delete($where, 'tb_dosbim');
-        redirect('admin/dosbim');
+        $table = 'tb_dosbim';
+
+        // Call the delete method in the model
+        $this->model_dosbim->delete($where, $table);
+
+        // Redirect to the desired page after deletion (you can change the URL as per your requirement)
+        redirect(base_url('admin/dosbim'));
     }
+
+
     public function jadwal()
     {
         $this->load->view('layout/header');

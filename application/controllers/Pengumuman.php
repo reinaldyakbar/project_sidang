@@ -53,6 +53,12 @@ class Pengumuman extends CI_Controller
         $this->model_pengumuman->delete($where, 'tb_pengumuman');
         redirect('pengumuman/index');
     }
+    public function delete($id)
+    {
+        $where = array('id' => $id);
+        $this->model_pengumuman->delete($where, 'tb_pengumuman');
+        redirect('pengumuman/index');
+    }
     public function tambah_pengumuman()
     {
         $data['pengumuman'] = $this->model_pengumuman->getPengumuman();

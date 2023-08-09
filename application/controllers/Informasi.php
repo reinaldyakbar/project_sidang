@@ -31,7 +31,8 @@ class Informasi extends CI_Controller
     {
         if ($this->input->post()) {
             $data = array(
-                'prosedur_ta1' => $this->input->post('prosedur_ta1'),
+                'berkas_reguler' => $this->input->post('berkas_reguler'),
+                'berkas_publikasi' => $this->input->post('berkas_publikasi'),
                 'syarat_admin_ta1' => $this->input->post('syarat_admin_ta1'),
                 'syarat_akademik_ta1' => $this->input->post('syarat_akademik_ta1'),
                 'syarat_sidang_ta1' => $this->input->post('syarat_sidang_ta1')

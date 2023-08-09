@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css
     ">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <div id="layoutSidenav_content">
     <section class="bg-white py-2">
@@ -37,7 +38,7 @@
                         <tr>
                             <td>
                                 <a href="<?php echo base_url('uploads/' . $dsn->gambar); ?>" data-lightbox="avatar">
-                                    <img src="<?php echo base_url('uploads/' . $dsn->gambar); ?>" alt=" Avatar"
+                                    <img src="<?php echo base_url('uploads/' . $dsn->gambar); ?>" alt="Avatar"
                                         style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;">
                                 </a>
                                 <span>
@@ -53,13 +54,12 @@
                             <td class="text-center">
                                 <!-- Tombol Edit -->
                                 <a class="btn btn-success btn-sm" href="#" data-bs-toggle="modal"
-                                    data-bs-target="#editDosenModal<?php echo $dsn->id; ?>"><i
-                                        class="fas fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
-                                <!-- Tombol Hapus -->
-                                <button class="btn btn-danger btn-sm" onclick="konfirmasiHapus(<?php echo $dsn->id; ?>)">
-                                    <i class="fas fa-trash"></i>
-                                </button>
+                                    data-bs-target="#editDosenModal<?php echo $dsn->id; ?>"><i class="fas fa-edit"></i></a>
 
+                                <!-- Tombol Hapus -->
+                                <a class="btn btn-danger btn-sm" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#hapusDosenModal<?php echo $dsn->id; ?>"><i
+                                        class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                         <!-- Modal Edit Dosen -->
@@ -106,7 +106,74 @@
                             </div>
                         </div>
                         <!-- End Modal Edit Dosen -->
-
+                        <!-- Modal Tambah Dosen -->
+                        <div class="modal fade" id="tambahDosenModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Tambah Dosen</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="tambahDosenForm" action="<?php echo base_url('admin/insert'); ?>"
+                                            method="post" enctype="multipart/form-data">
+                                            <div class="mb-3">
+                                                <label for="nama" class="form-label">Nama</label>
+                                                <input type="text" class="form-control" id="nama" name="nama"
+                                                    placeholder="Masukkan nama dosen">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="npp" class="form-label">NPP</label>
+                                                <input type="text" class="form-control" id="npp" name="npp"
+                                                    placeholder="Masukkan NPP">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="bidang" class="form-label">Bidang Kajian</label>
+                                                <input type="text" class="form-control" id="bidang" name="bidang"
+                                                    placeholder="Masukkan bidang kajian">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="gambar" class="form-label">Gambar</label>
+                                                <input type="file" class="form-control" id="gambar" name="gambar">
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Batal</button>
+                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal Hapus -->
+                        <div class="modal fade" id="hapusDosenModal<?php echo $dsn->id; ?>" tabindex="-1" role="dialog"
+                            aria-labelledby="hapusDosenModalLabel<?php echo $dsn->id; ?>" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="hapusDosenModalLabel<?php echo $dsn->id; ?>">Hapus Dosen
+                                        </h5>
+                                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Anda yakin ingin menghapus data dosen
+                                            <?php echo $dsn->nama; ?>?
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Batal</button>
+                                        <a href="<?php echo base_url('admin/delete' . $dsn->id); ?>"
+                                            class="btn btn-danger">Hapus</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     <?php endforeach; ?>
                 </tbody>
             </table>
@@ -114,62 +181,8 @@
     </section>
 </div>
 
-<!-- Modal Tambah Dosen -->
-<div class="modal fade" id="tambahDosenModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Tambah Dosen</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form id="tambahDosenForm" action="<?php echo base_url('admin/insert'); ?>" method="post"
-                    enctype="multipart/form-data">
-                    <div class="mb-3">
-                        <label for="nama" class="form-label">Nama</label>
-                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan nama dosen">
-                    </div>
-                    <div class="mb-3">
-                        <label for="npp" class="form-label">NPP</label>
-                        <input type="text" class="form-control" id="npp" name="npp" placeholder="Masukkan NPP">
-                    </div>
-                    <div class="mb-3">
-                        <label for="bidang" class="form-label">Bidang Kajian</label>
-                        <input type="text" class="form-control" id="bidang" name="bidang"
-                            placeholder="Masukkan bidang kajian">
-                    </div>
-                    <div class="mb-3">
-                        <label for="gambar" class="form-label">Gambar</label>
-                        <input type="file" class="form-control" id="gambar" name="gambar">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Modal Konfirmasi Hapus -->
-<div class="modal fade" id="konfirmasiHapusModal<?php echo $dsn->id; ?>" tabindex="-1"
-    aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Hapus</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Apakah Anda yakin ingin menghapus Dosen Pembimbing ini?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                <a class="btn btn-danger" href="#" onclick="hapusDosen(<?php echo $dsn->id; ?>)">Hapus</a>
-            </div>
-        </div>
-    </div>
-</div>
+
+
 
 
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
@@ -182,14 +195,3 @@
 </script>
 <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-    function konfirmasiHapus(dosenId) {
-        const modal = new bootstrap.Modal(document.getElementById("konfirmasiHapusModal" + dosenId));
-        modal.show();
-    }
-
-    function hapusDosen(dosenId) {
-        // Lakukan penghapusan di sini, misalnya, arahkan ke endpoint penghapusan
-        window.location.href = "<?php echo base_url('admin/delete/') ?>" + dosenId;
-    }
-</script>
