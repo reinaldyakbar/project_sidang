@@ -51,7 +51,9 @@
           <div class="card mt-5">
             <div class="card-body">
               <h5 class="card-title">Jumlah Dosen</h5>
-              <p class="card-text">Total Dosen: 50</p>
+              <p class="card-text">Total Dosen:
+                <?php echo $totalDosen; ?>
+              </p>
             </div>
           </div>
         </div>
@@ -59,18 +61,24 @@
           <div class="card mt-5">
             <div class="card-body">
               <h5 class="card-title">Jumlah Pengumuman</h5>
-              <p class="card-text">Total Pengumuman: 20</p>
+              <p class="card-text">Total Pengumuman:
+                <?php echo $totalPengumuman; ?>
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="image-container">
-      <img src="<?php echo base_url('assets/img/logo.png') ?>" alt="Logo" class="image">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div class="image-container">
+            <img src="<?php echo base_url('assets/img/logo.png') ?>" alt="Logo" class="image">
+          </div>
+        </div>
+      </div>
     </div>
-
   </div>
+
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -121,9 +121,13 @@
                                 <?php echo $png['koordinator']; ?>
                             </td>
                             <td>
+                                <!-- Views Button -->
+                                <a href="" class="btn  btn-success">
+                                    <i class="fas fa-eye"></i> Lihat
+                                </a>
                                 <!-- Delete Button -->
-                                <a href="<?php echo base_url('pengumuman/delete_pengumuman') ?>" class="btn btn-delete">
-                                    <i class="fas fa-trash-alt btn-icon"></i> Hapus
+                                <a href="<?php echo base_url('pengumuman/delete_pengumuman') ?>" class="btn btn-danger">
+                                    <i class="fas fa-trash"></i> Hapus
                                 </a>
                             </td>
                         </tr>

@@ -67,8 +67,8 @@ self.addEventListener('push', event => {
   const title = 'Notifikasi PWA';
   const options = {
     body: 'Ini adalah contoh notifikasi push pada PWA.',
-    icon: '/path/to/icon.png', // Ganti dengan URL icon notifikasi Anda
-    badge: '/path/to/badge.png', // Ganti dengan URL badge notifikasi Anda
+    icon: '/project_sidang/assets/img/notif.png', // Ganti dengan URL icon notifikasi Anda
+    badge: '/project_sidang/assets/img/badge.png', // Ganti dengan URL badge notifikasi Anda
   };
 
   event.waitUntil(

@@ -50,7 +50,11 @@ class Admin extends CI_Controller
     public function dashboard()
     {
         $data['pengumuman'] = $this->model_pengumuman->getPengumuman();
-        $data['dosbim'] = $this->model_dosbim->getDosbim();
+        $data['dosbim'] = $this->model_dosbim->get_dosbim();
+        $totalDosen = $this->model_dosbim->countAllDosen();
+        $totalPengumuman = $this->model_pengumuman->countAllPengumuman();
+        $data['totalPengumuman'] = $totalPengumuman;
+        $data['totalDosen'] = $totalDosen;
         $this->load->view('layout/header');
         $this->load->view('layout/sidebar');
         $this->load->view('admin/dashboard', $data);
@@ -58,7 +62,7 @@ class Admin extends CI_Controller
     }
     public function dosbim()
     {
-        $data['dosbim'] = $this->model_dosbim->getDosbim();
+        $data['dosbim'] = $this->model_dosbim->get_dosbim();
         $this->load->view('layout/header');
         $this->load->view('layout/sidebar');
         $this->load->view('admin/dosbim', $data);
@@ -70,16 +74,18 @@ class Admin extends CI_Controller
         $npp = $this->input->post('npp');
         $bidang = $this->input->post('bidang');
         $gambar = $_FILES['gambar']['name'];
-        if ($gambar = '') {
-        } else {
+        $dosbimCount = 0;
+
+        if ($gambar != '') {
             $config['upload_path'] = './uploads';
             $config['allowed_types'] = 'jpg|jpeg|png|svg';
 
             $this->load->library('upload', $config);
             if (!$this->upload->do_upload('gambar')) {
-                echo "File tidak dapat di upload!";
+                echo "File tidak dapat diupload!";
             } else {
                 $gambar = $this->upload->data('file_name');
+                $dosbimCount++;
             }
         }
 
@@ -90,57 +96,71 @@ class Admin extends CI_Controller
             'gambar' => $gambar
         );
 
+        $this->load->model('model_dosbim');
         $this->model_dosbim->insert($data, 'tb_dosbim');
-        $_SESSION["sukses"] = 'Dosbim berhasil di tambahkan';
+        $_SESSION["sukses"] = 'Dosbim berhasil ditambahkan';
+
+        if (!isset($_SESSION["dosbim_count"])) {
+            $_SESSION["dosbim_count"] = $dosbimCount;
+        } else {
+            $_SESSION["dosbim_count"] += $dosbimCount;
+        }
+
         redirect('admin/dosbim');
     }
-    public function update()
+
+    public function countDosen()
     {
-        $id = $this->input->post('id');
-        $nama = $this->input->post('nama');
-        $npp = $this->input->post('npp');
-        $bidang = $this->input->post('bidang');
-        $gambar = $_FILES['gambar']['name'];
-
-        if ($gambar == '') { // Gunakan operator perbandingan '==' bukan operator penugasan '='
-            // Jika $gambar kosong, tidak ada perubahan gambar
-        } else {
-            $config['upload_path'] = './uploads';
-            $config['allowed_types'] = 'jpg|jpeg|png|svg';
-
-            $this->load->library('upload', $config);
-            if (!$this->upload->do_upload('gambar')) {
-                echo "File tidak dapat di upload!";
-            } else {
-                $gambar = $this->upload->data('file_name');
-            }
-        }
-
-        $data = array(
-            'nama' => $nama,
-            'npp' => $npp,
-            'bidang' => $bidang,
-            'gambar' => $gambar
-        );
-
-        $where = array(
-            'id' => $id
-        );
-
-        $this->model_dosbim->update($where, $data, 'tb_dosbim');
-
-        $this->session->set_flashdata('success', 'Data berhasil diubah');
-        redirect('admin/dosbim');
+        $this->load->model('model_dosbim');
+        $jumlahDosen = $this->model_dosbim->countAllDosen();
+        echo "Jumlah Dosen: " . $jumlahDosen;
     }
 
     public function edit($id)
     {
-        $where = array('id' => $id);
-        $data['dosbim'] = $this->model_dosbim->edit($where, 'tb_dosbim')->result();
-        $this->load->view('layout/header');
-        $this->load->view('layout/sidebar');
-        $this->load->view('admin/dosbim', $data);
-        $this->load->view('layout/footer');
+        $nama = $this->input->post('nama');
+        $npp = $this->input->post('npp');
+        $bidang = $this->input->post('bidang');
+        $gambar = $_FILES['gambar']['name'];
+        $dosbimCount = 0;
+
+        // Lakukan pengecekan dan pengolahan gambar hanya jika ada perubahan gambar
+        if ($gambar != '') {
+            $config['upload_path'] = './uploads';
+            $config['allowed_types'] = 'jpg|jpeg|png|svg';
+
+            $this->load->library('upload', $config);
+            if (!$this->upload->do_upload('gambar')) {
+                echo "File tidak dapat diupload!";
+            } else {
+                $gambar = $this->upload->data('file_name');
+                $dosbimCount++;
+            }
+        }
+
+        // Lakukan proses update data
+        $data = array(
+            'nama' => $nama,
+            'npp' => $npp,
+            'bidang' => $bidang
+        );
+
+        // Jika ada perubahan gambar, tambahkan data gambar ke dalam array
+        if ($gambar != '') {
+            $data['gambar'] = $gambar;
+        }
+
+        $this->load->model('model_dosbim');
+        $this->model_dosbim->update($data, $id, 'tb_dosbim');
+        $_SESSION["sukses"] = 'Data Dosbim berhasil diupdate';
+
+        if (!isset($_SESSION["dosbim_count"])) {
+            $_SESSION["dosbim_count"] = $dosbimCount;
+        } else {
+            $_SESSION["dosbim_count"] += $dosbimCount;
+        }
+
+        redirect('admin/dosbim');
     }
 
     public function delete($id)

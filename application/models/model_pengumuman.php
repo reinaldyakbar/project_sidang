@@ -8,6 +8,10 @@ class model_pengumuman extends CI_Model
         $query = $this->db->get('tb_pengumuman'); // Ganti "nama_table" dengan nama tabel yang Anda gunakan
         return $query->result();
     }
+    public function countAllPengumuman()
+    {
+        return $this->db->count_all('tb_pengumuman');
+    }
     public function insert($data, $table)
     {
         $this->db->insert($table, $data);

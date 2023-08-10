@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="text-center mb-5 mt-4">
-                        <h2 class="display-7 fw-bolder mb-5"><span class="text-gradient d-inline">Jadwal Sidang Tugas
+                        <h2 class="display-7 fw-bolder mb-5"><span class="d-inline">Jadwal Sidang Tugas
                                 Akhir</span></h2>
                     </div>
                 </div>
@@ -53,20 +53,14 @@
                                         <?php echo $jadwal['estimasi_sidang']; ?>
                                     </td>
                                     <td>
-                                        <!-- Tombol Edit -->
-                                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                                            data-bs-target="#editModal" data-id="<?php echo $jadwal['id']; ?>"
-                                            data-gelombang="<?php echo $jadwal['gelombang']; ?>"
-                                            data-pendaftaran="<?php echo $jadwal['pendaftaran']; ?>"
-                                            data-waktu-sidang="<?php echo $jadwal['estimasi_sidang']; ?>">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
+                                        <a href="javascript:void(0);" class="btn btn-warning"
+                                            onclick="editJadwal(<?php echo $jadwal['id']; ?>)"><i
+                                                class="fas fa-edit"></i></a>
 
-                                        <!-- Tombol Hapus -->
-                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                            data-bs-target="#hapusModal" data-id="<?php echo $jadwal['id']; ?>">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
+                                        <a href="<?php echo base_url('jadwal/delete/' . $jadwal['id']); ?>"
+                                            class="btn btn-danger" onclick="return confirmDelete()"><i
+                                                class="fas fa-trash"></i></a>
+
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -107,20 +101,12 @@
                                         <?php echo $jadwal['keterangan']; ?>
                                     </td>
                                     <td>
-                                        <!-- Tombol Edit -->
-                                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                                            data-bs-target="#editModal" data-id="<?php echo $jadwal['id']; ?>"
-                                            data-gelombang="<?php echo $jadwal['gelombang']; ?>"
-                                            data-pendaftaran="<?php echo $jadwal['pendaftaran']; ?>"
-                                            data-waktu-sidang="<?php echo $jadwal['waktu_sidang']; ?>">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-
-                                        <!-- Tombol Hapus -->
-                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                            data-bs-target="#hapusModal" data-id="<?php echo $jadwal['id']; ?>">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
+                                        <a href="<?php echo base_url('jadwal/edit_ta2/' . $jadwal['id']); ?>"
+                                            class="btn btn-warning"><i class="bi bi-pencil"></i></a>
+                                        <a href="<?php echo base_url('jadwal/delete_ta2/' . $jadwal['id']); ?>"
+                                            class="btn btn-danger"
+                                            onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i
+                                                class="bi bi-trash"></i></a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -139,7 +125,7 @@
                 <h5 class="modal-title" id="tambahModalLabel">Tambah Jadwal Sidang Tugas Akhir</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="<?php echo base_url('jadwal/simpan_jadwalTA1'); ?>" method="post">
+            <form action="<?php echo base_url('jadwal/insert/'); ?>" method="post">
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="gelombang" class="form-label">Gelombang:</label>
@@ -162,61 +148,6 @@
         </div>
     </div>
 </div>
-<!-- Modal Edit TA1 -->
-<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="editModalLabel">Edit Jadwal Sidang Tugas Akhir</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="<?php echo base_url('jadwal/edit_jadwalTA1'); ?>" method="post">
-                <div class="modal-body">
-                    <input type="hidden" name="edit_jadwal_id" id="edit_jadwal_id">
-                    <div class="mb-3">
-                        <label for="edit_gelombang" class="form-label">Gelombang:</label>
-                        <input type="text" name="edit_gelombang" id="edit_gelombang" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="edit_pendaftaran" class="form-label">Pendaftaran:</label>
-                        <input type="text" name="edit_pendaftaran" id="edit_pendaftaran" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="edit_estimasi_sidang" class="form-label">Estimasi Sidang:</label>
-                        <input name="edit_estimasi_sidang" id="edit_estimasi_sidang" class="form-control"
-                            required></input>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                    <input type="submit" class="btn btn-primary" value="Simpan Perubahan">
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<!-- Modal Hapus TA1 -->
-<div class="modal fade" id="hapusModal" tabindex="-1" aria-labelledby="hapusModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="hapusModalLabel">Hapus Jadwal Sidang Tugas Akhir</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Apakah Anda yakin ingin menghapus jadwal ini?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                <a href="<?php echo base_url('jadwal/hapus_jadwalTA1'); ?>" class="btn btn-danger"
-                    id="hapusJadwalBtn">Hapus</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 
 <!-- Modal Tambah TA2-->
 <div class="modal fade" id="tambahModalTA2" tabindex="-1" aria-labelledby="tambahModalLabel" aria-hidden="true">
@@ -226,7 +157,7 @@
                 <h5 class="modal-title" id="tambahModalLabel">Tambah Jadwal Sidang Tugas Akhir</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="<?php echo base_url('jadwal_controller/simpan_jadwal'); ?>" method="post">
+            <form action="<?php echo base_url('jadwal/insert_ta2/'); ?>" method="post">
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="gelombang" class="form-label">Gelombang:</label>
@@ -255,10 +186,33 @@
     </div>
 </div>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     AOS.init();
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-<script src="<?php echo base_url() ?>assets/front-end/assets/js/bootstrap.min.js"></script>
+<!-- Modal Edit dan Hapus -->
+<script>
+    function editJadwal(id) {
+        window.location.href = "<?php echo base_url('jadwal/edit/'); ?>" + id;
+    }
+    function confirmDelete() {
+        return confirm("Apakah Anda yakin ingin menghapus data ini?");
+    }
+
+</script>
+<script>
+    function showNotification(message) {
+        const notification = document.createElement('div');
+        notification.className = 'alert alert-success fixed-top';
+        notification.role = 'alert';
+        notification.textContent = message;
+
+        document.body.appendChild(notification);
+
+        setTimeout(function () {
+            document.body.removeChild(notification);
+        }, 3000); // Notifikasi akan hilang setelah 3 detik
+    }
+</script>

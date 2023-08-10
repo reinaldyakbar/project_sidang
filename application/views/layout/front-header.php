@@ -1,5 +1,16 @@
 <!doctype html>
 <html lang="en">
+<meta name="Description" content="Website TATIS Udinus" />
+<!-- Mendeklarasikan warna yang muncul pada address bar Chrome versi seluler -->
+<meta name="theme-color" content="#414f57" />
+<!-- Mendeklarasikan ikon untuk iOS -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="TATIS Udinus" />
+<link rel="apple-touch-icon" href="path/to/icons/128x128.png" />
+<!-- Mendeklarasikan ikon untuk Windows -->
+<meta name="msapplication-TileImage" content="path/to/icons/128x128.png" />
+<meta name="msapplication-TileColor" content="#000000" />
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>UDINUS:TATIS1</title>
@@ -38,6 +49,7 @@
 
         }
     </script>
+    <link rel="manifest" href="/project_sidang/manifest.json">
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Press+Start+2P&display=swap"
         rel="stylesheet">

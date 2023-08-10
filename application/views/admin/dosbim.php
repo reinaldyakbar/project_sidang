@@ -10,7 +10,7 @@
 </head>
 <div id="layoutSidenav_content">
     <section class="bg-white py-2">
-        <div class="container">
+        <div class="container col-md-11 mb-5">
             <table id="example" class="table table-striped" style="width:100%">
                 <div class="row">
                     <div class="col-lg-12">
@@ -53,9 +53,9 @@
                             </td>
                             <td class="text-center">
                                 <!-- Tombol Edit -->
-                                <a class="btn btn-success btn-sm" href="#" data-bs-toggle="modal"
-                                    data-bs-target="#editDosenModal<?php echo $dsn->id; ?>"><i class="fas fa-edit"></i></a>
-
+                                <a class="btn btn-success btn-sm edit-btn" data-bs-toggle="modal"
+                                    data-bs-target="#editDosenModal" data-id="<?php echo $dsn->id; ?>"><i
+                                        class="fas fa-edit"></i></a>
                                 <!-- Tombol Hapus -->
                                 <a class="btn btn-danger btn-sm" href="#" data-bs-toggle="modal"
                                     data-bs-target="#hapusDosenModal<?php echo $dsn->id; ?>"><i
@@ -63,8 +63,8 @@
                             </td>
                         </tr>
                         <!-- Modal Edit Dosen -->
-                        <div class="modal fade" id="editDosenModal<?php echo $dsn->id; ?>" tabindex="-1"
-                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="editDosenModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -72,40 +72,37 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
-                                    <div class="modal-body">
-                                        <form id="editDosenForm" action="<?php echo base_url() . 'admin/update'; ?>"
-                                            method="post" enctype="multipart/form-data">
+                                    <form id="editDosenForm" action="<?php echo base_url() . 'admin/edit'; ?>" method="POST"
+                                        enctype="multipart/form-data">
+                                        <div class="modal-body">
+                                            <input type="hidden" id="edit-dosen-id" name="id">
                                             <div class="mb-3">
                                                 <label for="nama" class="form-label">Nama</label>
-                                                <input type="text" class="form-control" id="nama" name="nama"
-                                                    value="<?php echo $dsn->nama; ?>">
+                                                <input type="text" class="form-control" id="nama" name="nama">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="npp" class="form-label">NPP</label>
-                                                <input type="text" class="form-control" id="npp" name="npp"
-                                                    value="<?php echo $dsn->npp; ?>">
+                                                <input type="text" class="form-control" id="npp" name="npp">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="bidang" class="form-label">Bidang Kajian</label>
-                                                <input type="text" class="form-control" id="bidang" name="bidang"
-                                                    value="<?php echo $dsn->bidang; ?>">
+                                                <input type="text" class="form-control" id="bidang" name="bidang">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="gambar" class="form-label">Gambar</label>
-                                                <input type="file" class="form-control" id="gambar" name="gambar"
-                                                    value="<?php echo $dsn->gambar; ?>">
+                                                <input type="file" class="form-control" id="gambar" name="gambar">
                                             </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Batal</button>
-                                                <button type="submit" class="btn btn-primary">Simpan</button>
-                                            </div>
-                                        </form>
-                                    </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Batal</button>
+                                            <button type="submit" class="btn btn-primary">Simpan</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
-                        <!-- End Modal Edit Dosen -->
+
                         <!-- Modal Tambah Dosen -->
                         <div class="modal fade" id="tambahDosenModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
@@ -185,13 +182,24 @@
 
 
 
+<!-- Load jQuery -->
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
+<!-- Load DataTables -->
 <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
+
+<!-- Load AOS -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<!-- Initialize DataTables -->
 <script>
     $(document).ready(function () {
         $('#example').DataTable();
     });
 </script>
-<script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<!-- Initialize AOS -->
+<script>
+    AOS.init();
+</script>

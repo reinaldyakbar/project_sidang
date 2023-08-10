@@ -81,7 +81,7 @@
 
 <body>
     <div class="container">
-        <div class="row mt-5">
+        <div class="row">
             <div class="col-md-6">
                 <div class="card">
                     <div class="google-logo">
