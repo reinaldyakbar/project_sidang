@@ -15,7 +15,7 @@ class Informasi extends CI_Controller
         $data['info_ta1'] = $this->model_informasi->getInfoTA1();
         $this->load->view('layout/header');
         $this->load->view('layout/sidebar');
-        $this->load->view('admin/input_ta1');
+        $this->load->view('admin/info_ta1', $data);
         $this->load->view('layout/footer');
     }
     public function info_ta2()

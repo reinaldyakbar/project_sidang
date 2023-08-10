@@ -102,11 +102,11 @@
                                     </td>
                                     <td>
                                         <a href="<?php echo base_url('jadwal/edit_ta2/' . $jadwal['id']); ?>"
-                                            class="btn btn-warning"><i class="bi bi-pencil"></i></a>
+                                            class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                         <a href="<?php echo base_url('jadwal/delete_ta2/' . $jadwal['id']); ?>"
                                             class="btn btn-danger"
                                             onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i
-                                                class="bi bi-trash"></i></a>
+                                                class="fas fa-trash"></i></a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
