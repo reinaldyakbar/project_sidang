@@ -5,7 +5,7 @@ class Dashboard extends CI_Controller
 {
     public function index()
     {
-        $data['dosbim'] = $this->model_dosbim->getDosbim();
+        $data['dosbim'] = $this->model_dosbim->get_dosbim();
         $this->load->view('layout/front-header');
         $this->load->view('layout/front-navbar');
         $this->load->view('front-end/index', $data);
@@ -29,7 +29,7 @@ class Dashboard extends CI_Controller
     }
     public function dosbim()
     {
-        $data['dosbim'] = $this->model_dosbim->getDosbim();
+        $data['dosbim'] = $this->model_dosbim->get_dosbim();
         $this->load->view('layout/front-header');
         $this->load->view('layout/front-navbar');
         $this->load->view('front-end/dosbim', $data);
