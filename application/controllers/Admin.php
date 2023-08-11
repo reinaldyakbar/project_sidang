@@ -49,10 +49,10 @@ class Admin extends CI_Controller
     }
     public function dashboard()
     {
-        $data['pengumuman'] = $this->model_pengumuman->getPengumuman();
+        $data['pengumuman'] = $this->model_pengumuman->get_all_pengumuman();
         $data['dosbim'] = $this->model_dosbim->get_dosbim();
         $totalDosen = $this->model_dosbim->countAllDosen();
-        $totalPengumuman = $this->model_pengumuman->countAllPengumuman();
+        $totalPengumuman = $this->model_pengumuman->count_all_pengumuman();
         $data['totalPengumuman'] = $totalPengumuman;
         $data['totalDosen'] = $totalDosen;
         $this->load->view('layout/header');

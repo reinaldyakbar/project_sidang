@@ -1,5 +1,4 @@
 <head>
-    <!-- Other meta tags and CSS links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
@@ -121,13 +120,9 @@
                                 <?php echo $png['koordinator']; ?>
                             </td>
                             <td>
-                                <!-- Views Button -->
-                                <a href="" class="btn  btn-success">
-                                    <i class="fas fa-eye"></i> Lihat
-                                </a>
                                 <!-- Delete Button -->
                                 <a href="<?php echo base_url('pengumuman/delete_pengumuman') ?>" class="btn btn-danger">
-                                    <i class="fas fa-trash"></i> Hapus
+                                    <i class="fas fa-trash"></i>
                                 </a>
                             </td>
                         </tr>

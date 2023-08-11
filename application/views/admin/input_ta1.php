@@ -65,7 +65,7 @@
     <div id="layoutSidenav_content">
         <div class="container">
             <h2>Input Form for Tugas Akhir</h2>
-            <form action="<?php echo base_url('informasi/submit_form'); ?>" method="post">
+            <form action="<?php echo base_url('informasi/insert'); ?>" method="post">
                 <!-- Form input untuk Prosedur Tugas Akhir -->
                 <div class="section">
                     <label for="syarat_akademik_ta1">Syarat Akademik Tugas Akhir 1:</label>

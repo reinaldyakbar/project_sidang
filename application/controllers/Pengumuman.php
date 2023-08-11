@@ -5,12 +5,13 @@ class Pengumuman extends CI_Controller
 {
     public function index()
     {
-        $data['pengumuman'] = $this->model_pengumuman->getPengumuman();
+        $data['pengumuman'] = $this->model_pengumuman->get_all_pengumuman();
         $this->load->view('layout/header');
         $this->load->view('layout/sidebar');
         $this->load->view('admin/pengumuman', $data);
         $this->load->view('layout/footer');
     }
+
     public function add_pengumuman()
     {
         $this->load->library('form_validation');
@@ -43,45 +44,36 @@ class Pengumuman extends CI_Controller
 
             // Assuming that $this->model_pengumuman->insert() is a method in your model to insert data into the database
             $this->model_pengumuman->insert($data, 'tb_pengumuman');
-            $_SESSION["sukses"] = 'pengumuman berhasil ditambahkan';
+            $_SESSION["sukses"] = 'Pengumuman berhasil ditambahkan';
             redirect('pengumuman/index');
         }
     }
     public function delete_pengumuman($id)
     {
-        $where = array('id' => $id);
-        $this->model_pengumuman->delete($where, 'tb_pengumuman');
-        redirect('pengumuman/index');
-    }
-    public function delete($id)
-    {
-        $where = array('id' => $id);
-        $this->model_pengumuman->delete($where, 'tb_pengumuman');
-        redirect('pengumuman/index');
-    }
-    public function tambah_pengumuman()
-    {
-        $data['pengumuman'] = $this->model_pengumuman->getPengumuman();
-        $this->load->view('layout/header');
-        $this->load->view('layout/sidebar');
-        $this->load->view('admin/add_pengumuman', $data);
-        $this->load->view('layout/footer');
-    }
-    public function isi_pengumuman($id = null)
-    {
-        $data['pengumuman'] = $this->model_pengumuman->getPengumuman();
-        $data['id_pengumuman'] = $id; // Menyimpan nilai ID pengumuman dalam variabel $id_pengumuman
-
-        // Jika $id tidak diberikan, ambil ID pertama dari pengumuman
-        if ($id === null && isset($data['pengumuman'][0])) {
-            $data['id_pengumuman'] = $data['pengumuman'][0]->id;
+        // Mengasumsikan bahwa $this->model_pengumuman->delete() adalah metode di model Anda untuk menghapus data dari database
+        if ($this->model_pengumuman->delete($id)) {
+            $_SESSION["sukses"] = 'pengumuman berhasil dihapus';
+        } else {
+            $_SESSION["error"] = 'gagal menghapus pengumuman';
         }
-
-        $this->load->view('layout/header');
-        $this->load->view('layout/sidebar');
-        $this->load->view('admin/isi_pengumuman', $data);
-        $this->load->view('layout/footer');
+        redirect('pengumuman/index');
     }
 
 
+    public function get_pengumuman_by_id($id)
+    {
+        // Assuming that $this->model_pengumuman->get_all_pengumumanByID() is a method in your model to get data by ID
+        $pengumuman = $this->model_pengumuman->get_pengumumanByID($id);
+
+        if ($pengumuman) {
+            $data['pengumuman'] = $pengumuman;
+            $this->load->view('layout/header');
+            $this->load->view('layout/sidebar');
+            $this->load->view('admin/isi_pengumuman', $data);
+            $this->load->view('layout/footer');
+        } else {
+            // Handle case when pengumuman with given ID is not found
+            redirect('pengumuman/index');
+        }
+    }
 }

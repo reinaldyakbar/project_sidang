@@ -1,139 +1,75 @@
-<div id="layoutSidenav_content">
-    <section class="bg-white py-5" style="margin-top: 104px; margin-bottom: 8px;">
-        <div class="container px-5 ">
-            <div class="row ">
-                <div class="col-lg-12 ">
-                    <div class="text-center mb-5 mt-4">
-                        <h2 class="display-7 fw-bolder mb-5 "><span class="text-gradient d-inline ">Informasi Tugas
-                                Akhir 2</span></h2>
-                    </div>
-                </div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Informasi Tugas Akhir 2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div id="layoutSidenav_content">
+        <div class="container">
+            <h2 class="my-4 text-center">Daftar Informasi Tugas Akhir 2</h2>
+            <div class="d-flex justify-content-end mb-3">
+                <a href="<?php echo base_url('informasi/input_ta2'); ?>" class="btn btn-success">Tambah Informasi</a>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped text-center">
+                    <thead class="table-primary">
+                        <tr>
+                            <th scope="col">Syarat Akademik TA2</th>
+                            <th scope="col">Syarat Admin TA2</th>
+                            <th scope="col">Berkas TA2 Reguler</th>
+                            <th scope="col">Berkas TA2 Publikasi</th>
+                            <th scope="col">Pasca Reguler</th>
+                            <th scope="col">Pasca Publikasi</th>
+                            <th scope="col">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($info_ta2 as $informasi) { ?>
+                            <tr>
+                                <td>
+                                    <?php echo $informasi['syarat_akademik_ta2']; ?>
+                                </td>
+                                <td>
+                                    <?php echo $informasi['syarat_admin_ta2']; ?>
+                                </td>
+                                <td>
+                                    <?php echo $informasi['berkas_ta2_reguler']; ?>
+                                </td>
+                                <td>
+                                    <?php echo $informasi['berkas_ta2_publikasi']; ?>
+                                </td>
+                                <td>
+                                    <?php echo $informasi['pasca_reguler']; ?>
+                                </td>
+                                <td>
+                                    <?php echo $informasi['pasca_publikasi']; ?>
+                                </td>
+                                <td>
+                                    <a href="<?php echo base_url('informasi/delete_ta2/' . $informasi['id']); ?>"
+                                        class="btn btn-danger" onclick="return confirmDelete()">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
             </div>
         </div>
-        <div class="d-flex justify-content-center mt-4">
-            <div class="accordion" id="accordionExample" style="width: 1050px;">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button bg-white" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Pola dan Bentuk Tugas Akhir
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <ol>
-                                <li>Tugas Akhir Reguler
-                                    <p>Dapat ditempuh dengan bermacam bentuk seperti:</p>
-                                    <ul>
-                                        <li>Kajian Ilmiah</li>
-                                        <li>Kajian Prototipe</li>
-                                        <li>Perancangan Perangkat Informatika</li>
-                                        <li>Pengembangan Perangkat Informatika</li>
-                                    </ul>
-                                </li>
-                                <li>Kuliah Kerja Industri (KKI)</li>
-                                <li>Publikasi Jurnal Internasional Bereputasi (Terindeks Scopus minim Q3) atau dengan
-                                    Konferensi Internasional (terindex Scopus)</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
+    </div>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button bg-white collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Syarat Administrasi Tugas Akhir 2
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <ol>
-                                <li>Mahasiswa tersebut terdaftar sebagai mahasiswa aktif</li>
-                                <li>Mahasiswa tersebut sudah menginput KRS Tugas Akhir 2</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function confirmDelete() {
+            return confirm("Apakah Anda yakin ingin menghapus informasi ini?");
+        }
+    </script>
+</body>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button bg-white collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Syarat Akademik Tugas Akhir 2
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <ol>
-                                <li>Mahasiswa sudah menyelesaikan kuliah minimal 130 SKS</li>
-                                <li>Dalam daftar KHS tidak boleh ada nilai E</li>
-                                <li>IPK minimal 2.00</li>
-                                <li>Jumlah nilai D maksimal 10% dari jumlah mata kuliah yang telah diambil atau 4 mata
-                                    kuliah</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFour">
-                        <button class="accordion-button bg-white collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
-                            Syarat Sidang Tugas Akhir 2
-                        </button>
-                    </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <ol>
-                                <li>Mahasiswa harus lulus mata kuliah Tugas Akhir 1 minimal dengan nilai C</li>
-                                <li>Bimbingan minimal TA 2 8 kali</li>
-                                <li>Menyerahkan dokumen laporan tugas akhir, sebanyak 4 eksemplar</li>
-                                <li>Tidak boleh ada nilai E</li>
-                                <li>IPK minimal 2.00</li>
-                                <li>Telah menyelesaikan kuliah minimal 140 SKS</li>
-                                <li>Jumlah nilai D maksimal 5% dari jumlah mata kuliah yang telah diambil atau 2 mata
-                                    kuliah</li>
-                                <li>Skor TOEFL minimal 400</li>
-                                <li>Bebas beban administratif</li>
-                                <li>Sertifikat seminar nasional dan workshop masing-masing 1 buah</li>
-                                <li>Turnitin max 25%</li>
-                                <li>Pakaian yang digunakan saat Sidang TA 2, menggunakan baju putih berkerah,dasi,celana
-                                    hitam, dan sepatu hitam serta jas almameter</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
-<script>
-    // Dapatkan semua tombol accordion
-    const accordionButtons = document.querySelectorAll('[data-bs-toggle="collapse"]');
-
-    // Loop melalui setiap tombol accordion dan tambahkan event listener
-    accordionButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            // Dapatkan target collapse yang terkait dengan tombol ini
-            const targetId = this.getAttribute('data-bs-target');
-            const targetCollapse = document.querySelector(targetId);
-
-            // Dapatkan semua collapse yang ada di dalam parent accordion
-            const allCollapses = document.querySelectorAll('.accordion-collapse');
-
-            // Loop melalui setiap collapse dan sembunyikan jika bukan collapse yang sedang ditampilkan
-            allCollapses.forEach(collapse => {
-                if (collapse !== targetCollapse) {
-                    collapse.classList.remove('show');
-                }
-            });
-
-            // Toggle class "show" pada collapse untuk mengontrol tampilan
-            targetCollapse.classList.toggle('show');
-        });
-    });
-</script>
+</html>

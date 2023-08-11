@@ -1,35 +1,45 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class model_pengumuman extends CI_Model
+class Model_pengumuman extends CI_Model
 {
-    public function getPengumuman()
+    public function __construct()
     {
-        $query = $this->db->get('tb_pengumuman'); // Ganti "nama_table" dengan nama tabel yang Anda gunakan
+        parent::__construct();
+        $this->load->database();
+    }
+
+    public function get_all_pengumuman()
+    {
+        $query = $this->db->get('tb_pengumuman');
         return $query->result();
     }
-    public function countAllPengumuman()
+
+    public function get_pengumuman_by_id($id)
+    {
+        $query = $this->db->get_where('tb_pengumuman', array('id' => $id));
+        return $query->row();
+    }
+
+    public function insert($data)
+    {
+        return $this->db->insert('tb_pengumuman', $data);
+    }
+
+    public function update($id, $data)
+    {
+        $this->db->where('id', $id);
+        return $this->db->update('tb_pengumuman', $data);
+    }
+
+    public function delete($id)
+    {
+        $this->db->where('id', $id);
+        return $this->db->delete('tb_pengumuman');
+    }
+
+    public function count_all_pengumuman()
     {
         return $this->db->count_all('tb_pengumuman');
     }
-    public function insert($data, $table)
-    {
-        $this->db->insert($table, $data);
-    }
-    public function edit($where, $table)
-    {
-        return $this->db->get_where($table, $where);
-    }
-
-    public function update($where, $data, $table)
-    {
-        $this->db->where($where);
-        $this->db->update($table, $data);
-    }
-    public function delete($where, $table)
-    {
-        $this->db->where($where);
-        $this->db->delete($table);
-    }
-
 }

@@ -52,56 +52,10 @@
                                 <?php echo $dsn->bidang; ?>
                             </td>
                             <td class="text-center">
-                                <!-- Tombol Edit -->
-                                <a class="btn btn-success btn-sm edit-btn" data-bs-toggle="modal"
-                                    data-bs-target="#editDosenModal" data-id="<?php echo $dsn->id; ?>"><i
-                                        class="fas fa-edit"></i></a>
-                                <!-- Tombol Hapus -->
-                                <a class="btn btn-danger btn-sm" href="#" data-bs-toggle="modal"
-                                    data-bs-target="#hapusDosenModal<?php echo $dsn->id; ?>"><i
-                                        class="fas fa-trash"></i></a>
+                                <button>edit</button>
+                                <button>hapus</button>
                             </td>
                         </tr>
-                        <!-- Modal Edit Dosen -->
-                        <div class="modal fade" id="editDosenModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Edit Dosen</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <form id="editDosenForm" action="<?php echo base_url() . 'admin/edit'; ?>" method="POST"
-                                        enctype="multipart/form-data">
-                                        <div class="modal-body">
-                                            <input type="hidden" id="edit-dosen-id" name="id">
-                                            <div class="mb-3">
-                                                <label for="nama" class="form-label">Nama</label>
-                                                <input type="text" class="form-control" id="nama" name="nama">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="npp" class="form-label">NPP</label>
-                                                <input type="text" class="form-control" id="npp" name="npp">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="bidang" class="form-label">Bidang Kajian</label>
-                                                <input type="text" class="form-control" id="bidang" name="bidang">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="gambar" class="form-label">Gambar</label>
-                                                <input type="file" class="form-control" id="gambar" name="gambar">
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Batal</button>
-                                            <button type="submit" class="btn btn-primary">Simpan</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
 
                         <!-- Modal Tambah Dosen -->
                         <div class="modal fade" id="tambahDosenModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -141,32 +95,6 @@
                                                 <button type="submit" class="btn btn-primary">Simpan</button>
                                             </div>
                                         </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Modal Hapus -->
-                        <div class="modal fade" id="hapusDosenModal<?php echo $dsn->id; ?>" tabindex="-1" role="dialog"
-                            aria-labelledby="hapusDosenModalLabel<?php echo $dsn->id; ?>" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="hapusDosenModalLabel<?php echo $dsn->id; ?>">Hapus Dosen
-                                        </h5>
-                                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>Anda yakin ingin menghapus data dosen
-                                            <?php echo $dsn->nama; ?>?
-                                        </p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Batal</button>
-                                        <a href="<?php echo base_url('admin/delete' . $dsn->id); ?>"
-                                            class="btn btn-danger">Hapus</a>
                                     </div>
                                 </div>
                             </div>
