@@ -19,17 +19,17 @@
                         </a>
                         <div class="sb-sidenav-menu-heading">Interface</div>
                         <a class="nav-link" href="<?php echo base_url('admin/dosbim') ?>">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-user-alt"></i></div>
                             Dosbim
                         </a>
                         <a class="nav-link" href="<?php echo base_url('pengumuman') ?>">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-bullhorn"></i></div>
                             Pengumuman
                         </a>
                         <div class="sb-sidenav-menu-heading">Interface</div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
                             data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-circle-info"></i></div>
                             Informasi
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
@@ -41,7 +41,7 @@
                             </nav>
                         </div>
                         <a class="nav-link" href="<?php echo base_url('jadwal/index') ?>">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-calendar-week"></i></div>
                             Jadwal
                         </a>
                         <ul class="nav">

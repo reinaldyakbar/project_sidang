@@ -52,8 +52,11 @@
                                 <?php echo $dsn->bidang; ?>
                             </td>
                             <td class="text-center">
-                                <button>edit</button>
-                                <button>hapus</button>
+                                <a href="<?php echo base_url('admin/edit_dosbim/' . $dsn->id); ?>"
+                                    class="btn btn-warning"><i class="fas fa-edit"></i> Edit</a>
+                                <a href="<?php echo base_url('admin/delete/' . $dsn->id); ?>" class="btn btn-danger"
+                                    onclick="return confirm('Anda yakin ingin menghapus dosen ini?')"><i
+                                        class="fas fa-trash"></i> Hapus</a>
                             </td>
                         </tr>
 

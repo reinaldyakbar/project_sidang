@@ -25,9 +25,24 @@ class model_dosbim extends CI_Model
             return $query->result();
         }
     }
+    public function get_dosbim_by_id($id)
+    {
+        return $this->db->get_where('tb_dosbim', array('id' => $id))->row();
+    }
+
+    public function update_dosbim($id, $data)
+    {
+        $this->db->where('id', $id);
+        $this->db->update('tb_dosbim', $data);
+    }
+    public function delete_dosbim($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('tb_dosbim');
+    }
     public function countAllDosen()
     {
-        return $this->db->count_all('tb_dosbim');
+        return $this->db->count_all('tb_dosbim'); // Anda perlu sesuaikan dengan nama tabel yang Anda gunakan
     }
 
 }

@@ -38,7 +38,7 @@ class Dashboard extends CI_Controller
 
     public function pengumuman()
     {
-        $data['pengumuman'] = $this->model_pengumuman->getPengumuman();
+        $data['pengumuman'] = $this->model_pengumuman->get_all_pengumuman();
         $this->load->view('layout/front-header');
         $this->load->view('layout/front-navbar');
         $this->load->view('front-end/pengumuman', $data);
@@ -46,7 +46,7 @@ class Dashboard extends CI_Controller
     }
     public function isi_pengumuman($id = null)
     {
-        $data['pengumuman'] = $this->model_pengumuman->getPengumuman();
+        $data['pengumuman'] = $this->model_pengumuman->get_all_pengumuman();
 
         // Jika $id tidak diberikan, ambil ID pertama dari pengumuman
         if ($id === null && isset($data['pengumuman'][0])) {

@@ -162,34 +162,74 @@ class Admin extends CI_Controller
 
         redirect('admin/dosbim');
     }
+    public function get_dosen_by_id($id)
+    {
+        return $this->db->get_where('tb_dosbim', array('id' => $id))->row();
+    }
 
     public function delete($id)
     {
-        // Check if the ID is provided and is numeric
-        if (!is_numeric($id)) {
-            show_error('Invalid ID');
-            return;
-        }
-
-        // Create the where condition
-        $where = array('id' => $id);
-        $table = 'tb_dosbim';
-
-        // Call the delete method in the model
-        $this->model_dosbim->delete($where, $table);
-
-        // Redirect to the desired page after deletion (you can change the URL as per your requirement)
-        redirect(base_url('admin/dosbim'));
+        $this->model_dosbim->delete_dosbim($id);
+        redirect('admin/dosbim');
     }
-
-
-    public function jadwal()
+    public function edit_dosbim($id)
     {
+        $data['dosen'] = $this->model_dosbim->get_dosbim_by_id($id); // Mengambil data dosen berdasarkan ID
         $this->load->view('layout/header');
         $this->load->view('layout/sidebar');
-        $this->load->view('admin/jadwal');
+        $this->load->view('admin/edit_dosbim', $data);
         $this->load->view('layout/footer');
     }
+
+    public function update_dosen()
+    {
+        $id = $this->input->post('id'); // Ambil ID dari form
+        $nama = $this->input->post('nama');
+        $npp = $this->input->post('npp');
+        $bidang = $this->input->post('bidang');
+        $gambar = $_FILES['gambar']['name'];
+        $dosbimCount = 0;
+
+        // Lakukan pengecekan dan pengolahan gambar hanya jika ada perubahan gambar
+        if ($gambar != '') {
+            $config['upload_path'] = './uploads';
+            $config['allowed_types'] = 'jpg|jpeg|png|svg';
+
+            $this->load->library('upload', $config);
+            if (!$this->upload->do_upload('gambar')) {
+                echo "File tidak dapat diupload!";
+            } else {
+                $gambar = $this->upload->data('file_name');
+                $dosbimCount++;
+            }
+        }
+
+        // Lakukan proses update data
+        $data = array(
+            'nama' => $nama,
+            'npp' => $npp,
+            'bidang' => $bidang
+        );
+
+        // Jika ada perubahan gambar, tambahkan data gambar ke dalam array
+        if ($gambar != '') {
+            $data['gambar'] = $gambar;
+        }
+
+        $this->model_dosbim->update_dosbim($id, $data); // Panggil model untuk melakukan update data
+        $_SESSION["sukses"] = 'Data Dosbim berhasil diupdate';
+
+        if (!isset($_SESSION["dosbim_count"])) {
+            $_SESSION["dosbim_count"] = $dosbimCount;
+        } else {
+            $_SESSION["dosbim_count"] += $dosbimCount;
+        }
+
+        redirect('admin/dosbim');
+    }
+
+
+
 
 
 }
