@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Agu 2023 pada 08.35
--- Versi server: 10.4.27-MariaDB
--- Versi PHP: 7.4.33
+-- Generation Time: Aug 12, 2023 at 11:59 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_admin`
+-- Table structure for table `tb_admin`
 --
 
 CREATE TABLE `tb_admin` (
@@ -34,7 +34,7 @@ CREATE TABLE `tb_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_admin`
+-- Dumping data for table `tb_admin`
 --
 
 INSERT INTO `tb_admin` (`id`, `username`, `password`) VALUES
@@ -43,7 +43,7 @@ INSERT INTO `tb_admin` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_dosbim`
+-- Table structure for table `tb_dosbim`
 --
 
 CREATE TABLE `tb_dosbim` (
@@ -51,30 +51,31 @@ CREATE TABLE `tb_dosbim` (
   `npp` varchar(128) NOT NULL,
   `nama` varchar(128) NOT NULL,
   `bidang` varchar(128) NOT NULL,
+  `kuota` varchar(128) NOT NULL,
   `gambar` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_dosbim`
+-- Dumping data for table `tb_dosbim`
 --
 
-INSERT INTO `tb_dosbim` (`id`, `npp`, `nama`, `bidang`, `gambar`) VALUES
-(23, '0686.11.1996.101', 'Dr. AHMAD ZAINUL FANANI, SSi, M.Kom', 'SC', 'Dr_AHMAD_ZAINUL_FANANI_SSi_M_Kom_0686_11_1996.jpg'),
-(24, '0686.11.1996.106', 'Dr. BUDI HARJO M.Kom', 'RPLD', 'Dr_BUDI_HARJO_M_Kom_0686_11_1996.jpg'),
-(25, '0686.11.1996.103', 'Dr. HERIBERTUS HIMAWAN, M.Kom', 'RPLD', 'Dr_HERIBERTUS_HIMAWAN_S_Kom_M_Kom_0686_11_19963.jpg'),
-(26, '0686.11.1996.104', 'Dr. MULJONO, S.Si, M.Kom', 'SC', 'Dr_MULJONO_S_Si_M_Kom_0686_11_1996_1.jpg'),
-(27, '0686.11.1997.130', 'DR SOLICHUL HUDA, M.Kom', 'SKKKD', 'DR_SOLICHUL_HUDA_M_Kom_0686_11_1997.jpg'),
-(28, '0686.11.1997.132', 'ERNA ZUNI ASTUTI, M.Kom', 'SC', 'ERNA_ZUNI_ASTUTI_M_Kom_0686_11_1997.jpg'),
-(29, '0686.11.1996.097', 'HERU LESTIAWAN, M.Kom', 'RPLD', 'HERU_LESTIAWAN_M_Kom_0686_11_1996.jpg'),
-(30, '0686.11.1997.125', 'NOOR AGENG SETIYANTO, M.Kom', 'RPLD', 'NOOR_AGENG_SETIYANTO_M_Kom_0686_11_1997.jpg'),
-(31, '0686.11.1996.094', 'T. SUTOJO, S.Si, M.Kom', 'SC', 'T_SUTOJO_S_Si_M_Kom_0686_11_1996.jpg'),
-(32, '0686.11.1996.100', 'USMAN SUDIBYO, SSi.,M.KOM', 'SC', 'USMAN_SUDIBYO_SSi_M_KOM_0686_11_1996.jpg'),
-(33, '0686.11.2013.536', 'DEFRI KURNIAWAN, M.Kom', 'RPLD', 'Defri_kurniawan.jpg');
+INSERT INTO `tb_dosbim` (`id`, `npp`, `nama`, `bidang`, `kuota`, `gambar`) VALUES
+(23, '0686.11.1996.101', 'Dr. AHMAD ZAINUL FANANI, SSi, M.Kom', 'SC', '10', 'Dr_AHMAD_ZAINUL_FANANI_SSi_M_Kom_0686_11_1996.jpg'),
+(24, '0686.11.1996.106', 'Dr. BUDI HARJO M.Kom', 'RPLD', '10', 'Dr_BUDI_HARJO_M_Kom_0686_11_1996.jpg'),
+(25, '0686.11.1996.103', 'Dr. HERIBERTUS HIMAWAN, M.Kom', 'RPLD', '10', 'Dr_HERIBERTUS_HIMAWAN_S_Kom_M_Kom_0686_11_19963.jpg'),
+(26, '0686.11.1996.104', 'Dr. MULJONO, S.Si, M.Kom', 'SC', '10', 'Dr_MULJONO_S_Si_M_Kom_0686_11_1996_1.jpg'),
+(27, '0686.11.1997.130', 'DR SOLICHUL HUDA, M.Kom', 'SKKKD', '10', 'DR_SOLICHUL_HUDA_M_Kom_0686_11_1997.jpg'),
+(28, '0686.11.1997.132', 'ERNA ZUNI ASTUTI, M.Kom', 'SC', '10', 'ERNA_ZUNI_ASTUTI_M_Kom_0686_11_1997.jpg'),
+(29, '0686.11.1996.097', 'HERU LESTIAWAN, M.Kom', 'RPLD', '10', 'HERU_LESTIAWAN_M_Kom_0686_11_1996.jpg'),
+(30, '0686.11.1997.125', 'NOOR AGENG SETIYANTO, M.Kom', 'RPLD', '10', 'NOOR_AGENG_SETIYANTO_M_Kom_0686_11_1997.jpg'),
+(31, '0686.11.1996.094', 'T. SUTOJO, S.Si, M.Kom', 'SC', '10', 'T_SUTOJO_S_Si_M_Kom_0686_11_1996.jpg'),
+(32, '0686.11.1996.100', 'USMAN SUDIBYO, SSi.,M.KOM', 'SC', '10', 'USMAN_SUDIBYO_SSi_M_KOM_0686_11_1996.jpg'),
+(33, '0686.11.2013.536', 'DEFRI KURNIAWAN, M.Kom', 'RPLD', '10', 'Defri_kurniawan.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_informasi_ta1`
+-- Table structure for table `tb_informasi_ta1`
 --
 
 CREATE TABLE `tb_informasi_ta1` (
@@ -86,7 +87,7 @@ CREATE TABLE `tb_informasi_ta1` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_informasi_ta1`
+-- Dumping data for table `tb_informasi_ta1`
 --
 
 INSERT INTO `tb_informasi_ta1` (`id`, `berkas_reguler`, `syarat_admin_ta1`, `syarat_akademik_ta1`, `berkas_publikasi`) VALUES
@@ -99,7 +100,7 @@ INSERT INTO `tb_informasi_ta1` (`id`, `berkas_reguler`, `syarat_admin_ta1`, `sya
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_informasi_ta2`
+-- Table structure for table `tb_informasi_ta2`
 --
 
 CREATE TABLE `tb_informasi_ta2` (
@@ -115,7 +116,7 @@ CREATE TABLE `tb_informasi_ta2` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_jadwal_ta1`
+-- Table structure for table `tb_jadwal_ta1`
 --
 
 CREATE TABLE `tb_jadwal_ta1` (
@@ -126,7 +127,7 @@ CREATE TABLE `tb_jadwal_ta1` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_jadwal_ta1`
+-- Dumping data for table `tb_jadwal_ta1`
 --
 
 INSERT INTO `tb_jadwal_ta1` (`id`, `gelombang`, `pendaftaran`, `estimasi_sidang`) VALUES
@@ -138,7 +139,7 @@ INSERT INTO `tb_jadwal_ta1` (`id`, `gelombang`, `pendaftaran`, `estimasi_sidang`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_jadwal_ta2`
+-- Table structure for table `tb_jadwal_ta2`
 --
 
 CREATE TABLE `tb_jadwal_ta2` (
@@ -150,7 +151,7 @@ CREATE TABLE `tb_jadwal_ta2` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_jadwal_ta2`
+-- Dumping data for table `tb_jadwal_ta2`
 --
 
 INSERT INTO `tb_jadwal_ta2` (`id`, `gelombang`, `pendaftaran`, `waktu_sidang`, `keterangan`) VALUES
@@ -162,7 +163,7 @@ INSERT INTO `tb_jadwal_ta2` (`id`, `gelombang`, `pendaftaran`, `waktu_sidang`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pengumuman`
+-- Table structure for table `tb_pengumuman`
 --
 
 CREATE TABLE `tb_pengumuman` (
@@ -174,7 +175,7 @@ CREATE TABLE `tb_pengumuman` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_pengumuman`
+-- Dumping data for table `tb_pengumuman`
 --
 
 INSERT INTO `tb_pengumuman` (`id`, `judul`, `isi_pengumuman`, `koordinator`, `tanggal`) VALUES
@@ -186,89 +187,89 @@ INSERT INTO `tb_pengumuman` (`id`, `judul`, `isi_pengumuman`, `koordinator`, `ta
 --
 
 --
--- Indeks untuk tabel `tb_admin`
+-- Indexes for table `tb_admin`
 --
 ALTER TABLE `tb_admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_dosbim`
+-- Indexes for table `tb_dosbim`
 --
 ALTER TABLE `tb_dosbim`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_informasi_ta1`
+-- Indexes for table `tb_informasi_ta1`
 --
 ALTER TABLE `tb_informasi_ta1`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_informasi_ta2`
+-- Indexes for table `tb_informasi_ta2`
 --
 ALTER TABLE `tb_informasi_ta2`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_jadwal_ta1`
+-- Indexes for table `tb_jadwal_ta1`
 --
 ALTER TABLE `tb_jadwal_ta1`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_jadwal_ta2`
+-- Indexes for table `tb_jadwal_ta2`
 --
 ALTER TABLE `tb_jadwal_ta2`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_pengumuman`
+-- Indexes for table `tb_pengumuman`
 --
 ALTER TABLE `tb_pengumuman`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tb_admin`
+-- AUTO_INCREMENT for table `tb_admin`
 --
 ALTER TABLE `tb_admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_dosbim`
+-- AUTO_INCREMENT for table `tb_dosbim`
 --
 ALTER TABLE `tb_dosbim`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_informasi_ta1`
+-- AUTO_INCREMENT for table `tb_informasi_ta1`
 --
 ALTER TABLE `tb_informasi_ta1`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_informasi_ta2`
+-- AUTO_INCREMENT for table `tb_informasi_ta2`
 --
 ALTER TABLE `tb_informasi_ta2`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_jadwal_ta1`
+-- AUTO_INCREMENT for table `tb_jadwal_ta1`
 --
 ALTER TABLE `tb_jadwal_ta1`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_jadwal_ta2`
+-- AUTO_INCREMENT for table `tb_jadwal_ta2`
 --
 ALTER TABLE `tb_jadwal_ta2`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pengumuman`
+-- AUTO_INCREMENT for table `tb_pengumuman`
 --
 ALTER TABLE `tb_pengumuman`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;

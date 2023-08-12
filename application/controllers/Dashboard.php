@@ -13,7 +13,7 @@ class Dashboard extends CI_Controller
     }
     public function info_ta1()
     {
-        $data['info_ta1'] = $this->model_informasi->getInfoTA1();
+        $data['info_ta1'] = $this->model_informasi->get_all_info();
         $this->load->view('layout/front-header');
         $this->load->view('layout/front-navbar');
         $this->load->view('front-end/info_ta1', $data);
@@ -21,7 +21,7 @@ class Dashboard extends CI_Controller
     }
     public function info_ta2()
     {
-        $data['info_ta2'] = $this->model_informasi->getInfoTA2();
+        $data['info_ta2'] = $this->model_informasi->get_all_info_TA2();
         $this->load->view('layout/front-header');
         $this->load->view('layout/front-navbar');
         $this->load->view('front-end/info_ta2', $data);

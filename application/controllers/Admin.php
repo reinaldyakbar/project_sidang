@@ -73,6 +73,7 @@ class Admin extends CI_Controller
         $nama = $this->input->post('nama');
         $npp = $this->input->post('npp');
         $bidang = $this->input->post('bidang');
+        $kuota = $this->input->post('kuota');
         $gambar = $_FILES['gambar']['name'];
         $dosbimCount = 0;
 
@@ -93,6 +94,7 @@ class Admin extends CI_Controller
             'nama' => $nama,
             'npp' => $npp,
             'bidang' => $bidang,
+            'kuota' => $kuota,
             'gambar' => $gambar
         );
 
@@ -121,6 +123,7 @@ class Admin extends CI_Controller
         $nama = $this->input->post('nama');
         $npp = $this->input->post('npp');
         $bidang = $this->input->post('bidang');
+        $kuota = $this->input->post('kuota');
         $gambar = $_FILES['gambar']['name'];
         $dosbimCount = 0;
 
@@ -142,7 +145,8 @@ class Admin extends CI_Controller
         $data = array(
             'nama' => $nama,
             'npp' => $npp,
-            'bidang' => $bidang
+            'bidang' => $bidang,
+            'kuota' => $kuota
         );
 
         // Jika ada perubahan gambar, tambahkan data gambar ke dalam array
@@ -187,6 +191,7 @@ class Admin extends CI_Controller
         $nama = $this->input->post('nama');
         $npp = $this->input->post('npp');
         $bidang = $this->input->post('bidang');
+        $kuota = $this->input->post('kuota');
         $gambar = $_FILES['gambar']['name'];
         $dosbimCount = 0;
 
@@ -208,7 +213,8 @@ class Admin extends CI_Controller
         $data = array(
             'nama' => $nama,
             'npp' => $npp,
-            'bidang' => $bidang
+            'bidang' => $bidang,
+            'kuota' => $kuota
         );
 
         // Jika ada perubahan gambar, tambahkan data gambar ke dalam array
@@ -227,9 +233,4 @@ class Admin extends CI_Controller
 
         redirect('admin/dosbim');
     }
-
-
-
-
-
 }

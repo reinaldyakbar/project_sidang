@@ -14,15 +14,15 @@
                     <th>Dosen Pembimbing</th>
                     <th>NPP</th>
                     <th>Bidang kajian</th>
+                    <th>Kuota Bimbingan</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($dosbim as $dsn): ?>
+                <?php foreach ($dosbim as $dsn) : ?>
                     <tr>
                         <td>
                             <a href="<?php echo base_url('uploads/' . $dsn->gambar); ?>" data-lightbox="avatar">
-                                <img src="<?php echo base_url('uploads/' . $dsn->gambar); ?>" alt=" Avatar"
-                                    style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;">
+                                <img src="<?php echo base_url('uploads/' . $dsn->gambar); ?>" alt=" Avatar" style="border-radius: 50%; width: 30px; height: 30px; margin-right: 10px;">
                             </a>
                             <span>
                                 <?php echo $dsn->nama; ?>
@@ -33,6 +33,9 @@
                         </td>
                         <td>
                             <?php echo $dsn->bidang; ?>
+                        </td>
+                        <td>
+                            <?php echo $dsn->kuota; ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
