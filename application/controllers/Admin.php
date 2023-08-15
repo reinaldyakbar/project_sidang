@@ -191,9 +191,56 @@ class Admin extends CI_Controller
         $nama = $this->input->post('nama');
         $npp = $this->input->post('npp');
         $bidang = $this->input->post('bidang');
+<<<<<<< Updated upstream
         $kuota = $this->input->post('kuota');
         $gambar = $_FILES['gambar']['name'];
         $dosbimCount = 0;
+=======
+        $gambar = $_FILES['gambar']['name'];
+        $dosbimCount = 0;
+
+        // Lakukan pengecekan dan pengolahan gambar hanya jika ada perubahan gambar
+        if ($gambar != '') {
+            $config['upload_path'] = './uploads';
+            $config['allowed_types'] = 'jpg|jpeg|png|svg';
+
+            $this->load->library('upload', $config);
+            if (!$this->upload->do_upload('gambar')) {
+                echo "File tidak dapat diupload!";
+            } else {
+                $gambar = $this->upload->data('file_name');
+                $dosbimCount++;
+            }
+        }
+
+        // Lakukan proses update data
+        $data = array(
+            'nama' => $nama,
+            'npp' => $npp,
+            'bidang' => $bidang
+        );
+
+        // Jika ada perubahan gambar, tambahkan data gambar ke dalam array
+        if ($gambar != '') {
+            $data['gambar'] = $gambar;
+        }
+
+        $this->model_dosbim->update_dosbim($id, $data); // Panggil model untuk melakukan update data
+        $_SESSION["sukses"] = 'Data Dosbim berhasil diupdate';
+
+        if (!isset($_SESSION["dosbim_count"])) {
+            $_SESSION["dosbim_count"] = $dosbimCount;
+        } else {
+            $_SESSION["dosbim_count"] += $dosbimCount;
+        }
+
+        redirect('admin/dosbim');
+    }
+
+
+
+
+>>>>>>> Stashed changes
 
         // Lakukan pengecekan dan pengolahan gambar hanya jika ada perubahan gambar
         if ($gambar != '') {

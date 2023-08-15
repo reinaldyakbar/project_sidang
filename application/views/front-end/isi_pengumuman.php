@@ -37,38 +37,42 @@
         /* Mengubah opasitas menjadi 1 saat dihover */
     }
 </style>
-<div class="container my-5">
-    <div class="card px-4 py-5 mb-3" style="margin-top: 100px;">
-        <div class="row mb-5">
-            <div class="col-lg-12">
-                <h1>Info Pemilihan Dosen Pembimbing TA TI S-1 Ganjil 2022/2023</h1>
-                <p>12 September 2022</p>
+<div id="layoutSidenav_content">
+    <div class="container my-5">
+        <?php foreach ($pengumuman as $item) { ?>
+            <div class="card-info px-4 py-5 mb-3" style="margin-top: 100px;">
+                <div class="row mb-5">
+                    <div class="col-lg-12">
+                        <h1>
+                            <p>
+                                <?php echo $item->judul; ?>
+                            </p>
+                        </h1>
+                        <p>
+                            <?php echo $item->tanggal; ?>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p style="line-height: 2;">
+                        <p>
+                            <?php echo $item->isi_pengumuman; ?>
+                        </p>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <hr>
+                        <p>
+                        <p>
+                            <?php echo $item->koordinator; ?>
+                        </p>
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <p style="line-height: 2;">Diberitahukan kepada mahasiswa program studi TI S-1 yag mengambil Tugas Akhir
-                    yang belum memiliki Dosen Pembimbing TA dapat mengajukan permohonan Dosen Pembimbing melalui Sistem
-                    Pengajuan Dosen Pembimbing (SPDP) TA di alamat https://tatis1.dinus.web.id/.
-                    Silahkan buat account terlebih dahulu menggunakan email mahasiswa. <b> Pengajuan Dosen Pembimbing TA
-                        dimulai dari hari Senin, tanggal 12 s.d hari Kamis tanggal 14 September 2022 </b>. Lampirkan
-                    bukti permohonan berupa Surat Permohonan
-                    (format pdf) sebagai bukti keseriusan mengajukan permohonan ke dosbim yang dituju dan bukti
-                    pendukung screenshot percakapan sudah menghubungi dosbim yang dituju (jika ada, jika tidak ada dapat
-                    melampirkan surat permohonan). Sebelumnya
-                    kami telah melakukan rekap data terhadap surat permohonan yang dikirim melalui wa ke Koordinator 1
-                    maupun Koordinator 2 TA sampai dengan pengiriman hari Jumat, tanggal 9 September 2022. Adapun rekap
-                    surat permohonan yang telah dikirimkan
-                    tersebut dapat dilihat melalui https://bit.ly/cekPengajuan Demikian informasi ini disampaikan,
-                    diucapkan terima kasih.</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <hr>
-                <p>Koordinator TA 1 TI S-1</p>
-            </div>
-        </div>
-
+        <?php } ?>
     </div>
 </div>

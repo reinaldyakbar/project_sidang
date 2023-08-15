@@ -26,7 +26,12 @@
 
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama</label>
+<<<<<<< Updated upstream
                         <input type="text" class="form-control" id="nama" name="nama" value="<?php echo $dosen->nama; ?>">
+=======
+                        <input type="text" class="form-control" id="nama" name="nama"
+                            value="<?php echo $dosen->nama; ?>">
+>>>>>>> Stashed changes
                     </div>
                     <div class="mb-3">
                         <label for="npp" class="form-label">NPP</label>
@@ -34,12 +39,19 @@
                     </div>
                     <div class="mb-3">
                         <label for="bidang" class="form-label">Bidang Kajian</label>
+<<<<<<< Updated upstream
                         <input type="text" class="form-control" id="bidang" name="bidang" value="<?php echo $dosen->bidang; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="kuota" class="form-label">Kuota Bimbingan</label>
                         <input type="text" class="form-control" id="kuota" name="kuota" value="<?php echo $dosen->kuota; ?>">
                     </div>
+=======
+                        <input type="text" class="form-control" id="bidang" name="bidang"
+                            value="<?php echo $dosen->bidang; ?>">
+                    </div>
+
+>>>>>>> Stashed changes
                     <div class="mb-3">
                         <label for="gambar" class="form-label">Gambar</label>
                         <input type="file" class="form-control" id="gambar" name="gambar">
